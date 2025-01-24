@@ -42,7 +42,7 @@ public class Jugador : MonoBehaviour
 
     public void atacar(GameObject enemigo)
     {
-        Enemigo escript = enemigo.GetComponent<Enemigo>();
+        Enemigo_Normal escript = enemigo.GetComponent<Enemigo_Normal>();
         if (Input.GetKeyDown(KeyCode.E))
         {
             escript.vida = escript.vida - 1;

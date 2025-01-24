@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemigo_Normal : MonoBehaviour
 {
-    private float vida = 5f;
+    public float vida = 5f;
     private float damage = 2f;
     GameObject jugador, enemigo;
 
