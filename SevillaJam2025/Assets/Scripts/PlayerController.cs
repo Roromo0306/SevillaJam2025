@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     float dashingSpeed = 2.2f;
     float dashingTime = 0.3f;
     float dashCooldown = 0.3f;
+
+    public int myCoins = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public IEnumerator Dash()
+    private IEnumerator Dash()
     {
         isDashing = true;
         canDash = false;
@@ -53,4 +55,15 @@ public class PlayerController : MonoBehaviour
         canDash = true;
         
     }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            myCoins++;
+            Destroy(collision.gameObject);
+        }
+    }
+
+
 }
