@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Coin
+<<<<<<< Updated upstream
   - Enemigo_normal
+=======
+  - TiendaPersonaje
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

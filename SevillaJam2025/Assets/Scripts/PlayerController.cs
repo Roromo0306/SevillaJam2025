@@ -1,9 +1,10 @@
+using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float velocidadMovimiento = 15f;
+    public float velocidadMovimiento = 6f;
     float CoordX, CoordY, CoordZ;
 
     public Rigidbody rb;
@@ -16,10 +17,13 @@ public class PlayerController : MonoBehaviour
     float dashCooldown = 0.3f;
 
     public int myCoins = 0;
+
+    public GameObject panelTiendaPersonaje;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        panelTiendaPersonaje.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,8 +64,24 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Coin"))
         {
-            myCoins++;
+            myCoins++; ;
+            
             Destroy(collision.gameObject);
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("TiendaPersonaje"))
+        {
+            panelTiendaPersonaje.SetActive(true);
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("TiendaPersonaje"))
+        {
+            panelTiendaPersonaje.SetActive(false);
         }
     }
 
