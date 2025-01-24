@@ -13,6 +13,12 @@ public class Jugador : MonoBehaviour
     private float vida = 5f;
     private float daño = 2f;
     private float distM = 2f;
+    //Retroceso
+    private float distRetro = 1f;
+    private float velocRetro = 2f;
+    private Vector3 posObje;
+    private bool enRetroceso = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,18 +46,15 @@ public class Jugador : MonoBehaviour
         }
     }
 
+ 
+
     public void atacar(GameObject enemigo)
     {
         Enemigo_Normal escript = enemigo.GetComponent<Enemigo_Normal>();
         if (Input.GetKeyDown(KeyCode.E))
         {
             escript.vida = escript.vida - 1;
-
-            Vector3 posEnemigo = enemigoN.transform.position;
-            float veln = 0.5f;
-            posEnemigo.x = posEnemigo.x + 1;
-            posEnemigo.z = posEnemigo.z + 1;
-            enemigoN.transform.position = posEnemigo*veln;
+           
 
         }
     }
