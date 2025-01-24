@@ -2,7 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float velocidadMovimiento = 6f;
     float CoordX, CoordY, CoordZ;

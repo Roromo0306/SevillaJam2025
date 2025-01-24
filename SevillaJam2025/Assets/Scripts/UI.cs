@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UI : MonoBehaviour
 {
-    PlayerController personaje = new PlayerController();
+    public Player personaje;
 
     float plusVelocidad = 1.2f;
     public int costeVelocidad = 1;
@@ -17,11 +17,13 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(personaje.myCoins);
+        
     }
 
     public void masVelocidad()
     {     
+        if(personaje.myCoins > 0)
+        {
             if (ContadorClicks >= 0)
             {
                 personaje.velocidadMovimiento *= plusVelocidad;
@@ -33,7 +35,15 @@ public class UI : MonoBehaviour
             if (ContadorClicks == 2)
             {
                 Debug.Log("Lo siento, has llegado al maximo");
+                return;
             }
+        }
+        else if(personaje.myCoins == 0)
+        {
+            Debug.Log("No hay mas monedas ooo");
+        }
+
+            
     }
 
     
