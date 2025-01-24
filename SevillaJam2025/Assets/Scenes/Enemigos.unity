@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 1201087978}
   m_Layer: 0
   m_Name: jugador
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -668,6 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e2d86fee2026845a6717f94dbf64bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vida: 5
 --- !u!54 &1752493398
 Rigidbody:
   m_ObjectHideFlags: 0

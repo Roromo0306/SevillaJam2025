@@ -46,6 +46,13 @@ public class Jugador : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             escript.vida = escript.vida - 1;
+
+            Vector3 posEnemigo = enemigoN.transform.position;
+            float veln = 0.5f;
+            posEnemigo.x = posEnemigo.x + 1;
+            posEnemigo.z = posEnemigo.z + 1;
+            enemigoN.transform.position = posEnemigo*veln;
+
         }
     }
 
