@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class CambioEscenas : MonoBehaviour
 {
+    public GameObject panelPregunta;
     public void CambiarEscena (string nombre)
     {
         SceneManager.LoadScene(nombre);
@@ -12,5 +13,10 @@ public class CambioEscenas : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Se ha cerrado");
+    }
+
+    public void QuitarPanel()
+    {
+        panelPregunta.SetActive(false);
     }
 }

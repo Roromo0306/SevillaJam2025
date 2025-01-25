@@ -3537,6 +3537,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 714789232}
     - target: {fileID: 8930943204141200421, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+      propertyPath: bubbles
+      value: 
+      objectReference: {fileID: 1197398575}
+    - target: {fileID: 8930943204141200421, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1197398576}
+    - target: {fileID: 8930943204141200421, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
       propertyPath: AttackArea
       value: 
       objectReference: {fileID: 1151669426}
@@ -3561,6 +3569,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+--- !u!198 &1197398575 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5966843349841853836, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+  m_PrefabInstance: {fileID: 1197398574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1197398576 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3461851454915860897, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+  m_PrefabInstance: {fileID: 1197398574}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1233060918
 GameObject:
   m_ObjectHideFlags: 0

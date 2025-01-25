@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 
     public GameObject panelTiendaPersonaje;
     public GameObject panelTiendaObjetos;
+    public GameObject panelPregunta;
 
     public float vida = 6f;
 
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
     public Animator animator;
 
     public ParticleSystem bubbles;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -165,11 +167,13 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("TiendaPersonaje"))
         {
             panelTiendaPersonaje.SetActive(false);
+            panelPregunta.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("TiendaObjetos"))
         {
-            panelTiendaObjetos.SetActive(false) ;
+            panelTiendaObjetos.SetActive(false);
+            panelPregunta.SetActive(true);
         }
     }
 
