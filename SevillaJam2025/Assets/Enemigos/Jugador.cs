@@ -39,7 +39,7 @@ public class Jugador : MonoBehaviour
         cordZ = Input.GetAxis("Vertical") * vel;
         pos = new Vector3(cordX, cordY, cordZ);
         rb.linearVelocity = pos;
-        Debug.Log("La vida del jugador es " + vida);
+        //Debug.Log("La vida del jugador es " + vida);
 
         float dist = Vector3.Distance(jugador.transform.position, enemigoN.transform.position);
         if (dist <= distM)

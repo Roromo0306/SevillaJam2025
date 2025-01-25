@@ -15,7 +15,7 @@ public class Enemigo_Tanque : MonoBehaviour
     {
         
         enemigo = this.gameObject;
-        jugador = GameObject.Find("jugador");
+        jugador = GameObject.Find("Player");
         
     }
 
@@ -31,7 +31,7 @@ public class Enemigo_Tanque : MonoBehaviour
         {
             perseguir();
         }
-        Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Tanque);
+        //Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Tanque);
     }
 
     private void perseguir()
@@ -52,7 +52,7 @@ public class Enemigo_Tanque : MonoBehaviour
 
     void ataque(GameObject jugador)
     {
-        Jugador Jscript = jugador.GetComponent<Jugador>();
+        Player Jscript = jugador.GetComponent<Player>();
         if (Jscript != null)
         {
             Jscript.RecibirDaño(damage);

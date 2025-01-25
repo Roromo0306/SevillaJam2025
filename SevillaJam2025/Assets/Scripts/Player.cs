@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public GameObject panelTiendaPersonaje;
     public GameObject panelTiendaObjetos;
 
-    public int vida = 3;
+    public float vida = 6f;
 
     public float dañoAtaque = 10f;
 
@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     public bool isAttacking = false;
     private float timeToAttack = 0.5f;
     private float timer = 0f;
+
+    private GameObject jugador;
 
     public UI UI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,11 +40,19 @@ public class Player : MonoBehaviour
         panelTiendaPersonaje.SetActive(false);
         panelTiendaObjetos.SetActive(false);
         AttackArea.SetActive(false);
+        jugador = this.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("La vida del player es " + vida);
+
+        if (vida <= 0)
+        {
+            Debug.Log("El jugador ha muerto");
+            Destroy(this.gameObject);
+        } 
         if (isDashing)
         {
             return;
@@ -76,6 +86,8 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+     
         
     }
 
@@ -131,6 +143,21 @@ public class Player : MonoBehaviour
     {
         isAttacking = true;
         AttackArea.SetActive(isAttacking);
+    }
+
+    public void RecibirDaño(float damage)
+    {
+        Debug.Log($"Recibido daño: {damage}. Vida actual antes del daño: {vida}");
+
+        vida -= damage;
+
+        Debug.Log($"Vida después de recibir daño: {vida}");
+
+        if (vida <= 0)
+        {
+            Debug.Log("El jugador ha muerto");
+            Destroy(this.gameObject);
+        }
     }
 
 }

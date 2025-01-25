@@ -14,7 +14,7 @@ public class Enemigo_Normal : MonoBehaviour
     void Start()
     {
         enemigo = this.gameObject;
-        jugador = GameObject.Find("jugador");
+        jugador = GameObject.Find("Player");
     }
 
     
@@ -30,7 +30,7 @@ public class Enemigo_Normal : MonoBehaviour
         {
             perseguir();
         }
-        Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Normal);
+       // Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Normal);
 
     }
 
@@ -52,7 +52,7 @@ public class Enemigo_Normal : MonoBehaviour
 
     void ataque(GameObject jugador)
     {
-        Jugador Jscript = jugador.GetComponent<Jugador>();
+        Player Jscript = jugador.GetComponent<Player>();
         if (Jscript != null)
         {
             Jscript.RecibirDaño(damage);

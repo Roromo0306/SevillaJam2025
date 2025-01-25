@@ -14,7 +14,7 @@ public class Enemigo_Corre : MonoBehaviour
     void Start()
     {
         enemigo = this.gameObject;
-        jugador = GameObject.Find("jugador");
+        jugador = GameObject.Find("Player");
     }
 
     
@@ -44,8 +44,8 @@ public class Enemigo_Corre : MonoBehaviour
         GameObject jugadorC = collision.gameObject;
         if(jugadorC.tag == "Player")
         {
-            Jugador jug = jugador.GetComponent<Jugador>();
-            jug.vida = jug.vida - 2;
+            Player Jscript = jugador.GetComponent<Player>();
+            Jscript.vida = Jscript.vida - 10;
             Destroy(enemigo);
         }
     }
