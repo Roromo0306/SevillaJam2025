@@ -53,8 +53,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
+        
         if (vida <= 0)
         {
             Debug.Log("El jugador ha muerto");
