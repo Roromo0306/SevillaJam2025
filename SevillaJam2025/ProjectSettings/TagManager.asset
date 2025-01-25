@@ -8,6 +8,9 @@ TagManager:
   - Enemigo_normal
   - Enemigo_Tanque
   - Enemigo_Corre
+  - Coin
+  - TiendaObjetos
+  - TiendaPersonaje
   layers:
   - Default
   - TransparentFX
