@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class CamaraSeguimiento : MonoBehaviour
 {
-    public Transform player; // Referencia al jugador
+    Transform player; // Referencia al jugador
     public float height = 5.55f; // Altura fija de la cámara
+
+    private void Start()
+    {
+        player = Player.Instance.transform;
+    }
 
     private void LateUpdate()
     {

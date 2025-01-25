@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     public float velocidadMovimiento = 6f;
     public float CoordX, CoordY, CoordZ;
+    public float lastCoordX;
 
     public Rigidbody rb;
     Vector3 vector = new Vector3();
@@ -76,6 +77,11 @@ public class Player : MonoBehaviour
         }
 
         CoordX = Input.GetAxisRaw("Horizontal");
+        if (CoordX != 0)
+        {
+            lastCoordX = CoordX;
+        }
+
         CoordZ = Input.GetAxisRaw("Vertical");
 
         vector = new Vector3(CoordX * velocidadMovimiento, 0, CoordZ* velocidadMovimiento);
@@ -136,20 +142,24 @@ public class Player : MonoBehaviour
 
     public float direccionSigno()
     {
-        if(CoordX < 0)
+        if(lastCoordX < 0)
         {
             return -1;
         }
-        else
+        else if (lastCoordX > 0)
         {
             return 1;
         }
+
+        return -1;
     }
     private void Awake()
     {
-    
+        
+        
             Instance = this;
             DontDestroyOnLoad(transform.parent.gameObject);
+
     }
     private IEnumerator Dash()
     {
@@ -239,7 +249,7 @@ public class Player : MonoBehaviour
 
         if (sceneName == "Juego")
         {
-            transform.position = new Vector3(80, 2.2f, 0);
+            transform.position = new Vector3(80, 0, 0);
         }
     }
 }

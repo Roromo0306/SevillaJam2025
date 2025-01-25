@@ -5230,7 +5230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d016c4f77ca9043b6e36a099aa4fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 428760486979964935, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
   height: 5.55
 --- !u!1001 &1699257471
 PrefabInstance:
