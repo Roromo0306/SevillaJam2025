@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Undefined
   - Enemigo_normal
+  - Enemigo_Tanque
+  - Enemigo_Corre
   layers:
   - Default
   - TransparentFX
