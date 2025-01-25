@@ -8,6 +8,7 @@ public class Jugador : MonoBehaviour
     private float cordX, cordY, cordZ, d;
     private Vector3 pos;
 
+
     //Daño y atacar
     private GameObject jugador, enemigoN, enemigoT, enemigoC;
     private float vida = 5f;
@@ -66,7 +67,7 @@ public class Jugador : MonoBehaviour
        
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Vida_Enemigos.Vida_Normal = Vida_Enemigos.Vida_Normal - 1;
+            VidaEnemigos.Vida_Normal = VidaEnemigos.Vida_Normal - 1;
            
 
         }
@@ -77,7 +78,7 @@ public class Jugador : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Vida_Enemigos.Vida_Tanque = Vida_Enemigos.Vida_Tanque - 1;
+            VidaEnemigos.Vida_Tanque = VidaEnemigos.Vida_Tanque - 1;
         }
     }
 
@@ -86,7 +87,7 @@ public class Jugador : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Vida_Enemigos.Vida_Corre = Vida_Enemigos.Vida_Corre - 1;
+            VidaEnemigos.Vida_Corre = VidaEnemigos.Vida_Corre - 1;
         }
     }
 

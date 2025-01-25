@@ -20,7 +20,7 @@ public class Enemigo_Normal : MonoBehaviour
     
     void Update()
     {
-        if (Vida_Enemigos.Vida_Normal <= 0)
+        if (VidaEnemigos.Vida_Normal <= 0)
         {
             Destroy(enemigo);
         }
@@ -30,7 +30,7 @@ public class Enemigo_Normal : MonoBehaviour
         {
             perseguir();
         }
-        Debug.Log("La vida del enemigo es " + Vida_Enemigos.Vida_Normal);
+        Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Normal);
 
     }
 

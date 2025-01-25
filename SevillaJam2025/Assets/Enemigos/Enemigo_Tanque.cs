@@ -22,7 +22,7 @@ public class Enemigo_Tanque : MonoBehaviour
     
     void Update()
     {
-        if(Vida_Enemigos.Vida_Tanque <= 0)
+        if(VidaEnemigos.Vida_Tanque <= 0)
         {
             Destroy(enemigo);
         }
@@ -31,7 +31,7 @@ public class Enemigo_Tanque : MonoBehaviour
         {
             perseguir();
         }
-        Debug.Log("La vida del enemigo es " + Vida_Enemigos.Vida_Tanque);
+        Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Tanque);
     }
 
     private void perseguir()
