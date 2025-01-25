@@ -1,6 +1,8 @@
 using JetBrains.Annotations;
 using System.Collections;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -43,10 +45,7 @@ public class Player : MonoBehaviour
 
     public static Player Instance;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
+    string sceneName = SceneManager.GetActiveScene().name;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -64,7 +63,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         
         if (vida <= 0)
         {
@@ -133,9 +132,28 @@ public class Player : MonoBehaviour
             bubbles.Play();
         }
 
-        
+        if(sceneName == "Juego")
+        {
+            transform.position = new Vector3(80,0,0);   
+        }
     }
 
+    private void Awake()
+    {
+        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+       else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+
+
+    }
     private IEnumerator Dash()
     {
         isDashing = true;
