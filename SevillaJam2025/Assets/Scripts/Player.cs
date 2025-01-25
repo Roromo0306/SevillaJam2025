@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer SpriteRenderer;
     public Animator animator;
+
+    public ParticleSystem bubbles;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour
         AttackArea.SetActive(false);
         jugador = this.gameObject;
         animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
