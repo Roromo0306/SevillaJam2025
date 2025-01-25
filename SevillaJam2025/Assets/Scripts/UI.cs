@@ -13,6 +13,8 @@ public class UI : MonoBehaviour
 
     public float plusAtaque = 1.2f;
     public int costeAtaque = 2;
+
+    public bool clicked = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -98,6 +100,30 @@ public class UI : MonoBehaviour
 
         }
         else if (personaje.myCoins <= 1)
+        {
+            Debug.Log("No hay mas monedas ooo");
+        }
+    }
+
+    public void UnlockRafagaPompas()
+    {
+        if (personaje.myCoins > 0)
+        {
+            if (ContadorClicks == 1)
+            {
+                Debug.Log("Lo siento, has llegado al maximo");
+                return;
+            }
+
+            if (ContadorClicks >= 0)
+            {
+                Debug.Log("Holaaa");
+                ContadorClicks++;
+                clicked = true;
+            }
+
+        }
+        else if (personaje.myCoins == 0)
         {
             Debug.Log("No hay mas monedas ooo");
         }

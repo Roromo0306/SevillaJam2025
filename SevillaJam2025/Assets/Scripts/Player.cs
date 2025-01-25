@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     public bool isAttacking = false;
     private float timeToAttack = 0.5f;
     private float timer = 0f;
+
+    public UI UI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -56,20 +58,24 @@ public class Player : MonoBehaviour
             StartCoroutine(Dash());
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if(UI.clicked == true)
         {
-            Attack();
-        }
-        if (isAttacking)
-        {
-            timer += Time.deltaTime;
-            if(timer >= timeToAttack)
+            if (Input.GetKeyDown(KeyCode.R))
             {
-                timer = 0f;
-                isAttacking = false;
-                AttackArea.SetActive(false);
+                Attack();
+            }
+            if (isAttacking)
+            {
+                timer += Time.deltaTime;
+                if (timer >= timeToAttack)
+                {
+                    timer = 0f;
+                    isAttacking = false;
+                    AttackArea.SetActive(false);
+                }
             }
         }
+        
     }
 
     private IEnumerator Dash()

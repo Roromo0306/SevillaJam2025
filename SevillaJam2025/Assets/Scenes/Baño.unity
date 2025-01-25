@@ -353,6 +353,7 @@ MonoBehaviour:
   "da\xF1oAtaque": 10
   AttackArea: {fileID: 1025665177}
   isAttacking: 0
+  UI: {fileID: 207890837}
 --- !u!54 &189732097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -564,6 +565,7 @@ MonoBehaviour:
   costeVida: 2
   plusAtaque: 1.2
   costeAtaque: 2
+  clicked: 0
 --- !u!4 &207890838
 Transform:
   m_ObjectHideFlags: 0
@@ -1615,7 +1617,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 901046505}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 207890837}
+        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+        m_MethodName: UnlockRafagaPompas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &901046505
 MonoBehaviour:
   m_ObjectHideFlags: 0
