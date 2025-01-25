@@ -149,3 +149,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febea907b7443df49acb9a665c93d051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneda: {fileID: 1227861994141131393, guid: e1318c90df144954189138a7a3d1807c, type: 3}

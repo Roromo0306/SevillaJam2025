@@ -6,6 +6,8 @@ public class Enemigo_Corre : MonoBehaviour
     
     private float damage = 4f;
     GameObject jugador, enemigo;
+    public GameObject moneda;
+    private Transform posicionMoneda;
 
     //Perseguir
     private float distM = 5f;
@@ -47,6 +49,7 @@ public class Enemigo_Corre : MonoBehaviour
             Player Jscript = jugador.GetComponent<Player>();
             Jscript.vida = Jscript.vida - 10;
             Destroy(enemigo);
+            Instantiate(moneda, posicionMoneda.position, Quaternion.identity);
         }
     }
 }
