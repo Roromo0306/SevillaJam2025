@@ -15,4 +15,38 @@ public class VidaEnemigos : MonoBehaviour
     {
         
     }
+
+    public void Damage(float dañoAtaque)
+    {
+        Vida_Normal -= dañoAtaque;
+        Vida_Tanque -= dañoAtaque;
+        Vida_Corre -= dañoAtaque;
+        Vida_Distancia -= dañoAtaque;
+
+        Debug.Log($"{name} recibió {dañoAtaque} de daño. Vida restante: {Vida_Normal}");
+
+        if(Vida_Normal <= 0)
+        {
+            Matar();
+        }
+        if (Vida_Tanque <= 0)
+        {
+            Matar();
+
+        }
+        if (Vida_Corre <= 0)
+        {
+            Matar();
+        }
+        if (Vida_Distancia <= 0)
+        {
+            Matar();
+        }
+    }
+
+    private void Matar()
+    {
+        Debug.Log("Perro Muertoooo");
+        Destroy(gameObject);
+    }
 }
