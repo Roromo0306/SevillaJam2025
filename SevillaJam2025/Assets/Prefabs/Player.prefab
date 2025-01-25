@@ -164,6 +164,7 @@ MonoBehaviour:
   AttackArea: {fileID: 0}
   isAttacking: 0
   UI: {fileID: 0}
+  SpriteRenderer: {fileID: 0}
 --- !u!95 &3461851454915860897
 Animator:
   serializedVersion: 7
@@ -212,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 744992586335864355}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3637016, y: 0.13888891, z: -0.109978504}
+  m_LocalPosition: {x: -4.39, y: 0.13888891, z: -0.109978504}
   m_LocalScale: {x: 2.7777774, y: 2.7777774, z: 2.7777774}
   m_ConstrainProportionsScale: 0
   m_Children: []

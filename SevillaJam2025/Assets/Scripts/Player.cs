@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     private GameObject jugador;
 
     public UI UI;
+
+    public SpriteRenderer SpriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,7 +48,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("La vida del player es " + vida);
+        
 
         if (vida <= 0)
         {
@@ -87,8 +89,20 @@ public class Player : MonoBehaviour
             }
         }
 
-     
-        
+         Vector3 scale = transform.localScale;
+
+
+        if (CoordX < 0)
+        {
+            scale.x = Mathf.Abs(scale.x); // Asegúrate de que el objeto mire hacia la derecha
+        }
+        else if (CoordX > 0)
+        {
+            scale.x = -Mathf.Abs(scale.x); // Invierte el objeto para mirar hacia la izquierda
+        }
+
+        transform.localScale = scale;
+
     }
 
     private IEnumerator Dash()

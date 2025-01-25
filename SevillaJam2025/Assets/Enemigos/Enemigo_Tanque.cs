@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemigo_Tanque : MonoBehaviour
 {
     
-    private float damage = 3f;
+    public float damage = 1f;
     GameObject jugador, enemigo;
 
     //Perseguir

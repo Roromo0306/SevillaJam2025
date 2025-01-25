@@ -20,6 +20,7 @@ public class AreaAttack : MonoBehaviour
         VidaEnemigos vida = other.GetComponent<VidaEnemigos>();
         if (vida != null)
         {
+            Debug.Log("Le estoy pegando");
             vida.Damage(player.dañoAtaque);
         }
         
