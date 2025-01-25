@@ -7,6 +7,7 @@ public class CambioEscenas : MonoBehaviour
     public void CambiarEscena (string nombre)
     {
         SceneManager.LoadScene(nombre);
+        Player.Instance.OnCambioEscena(nombre);
     }
 
     public void QuitarJuego()

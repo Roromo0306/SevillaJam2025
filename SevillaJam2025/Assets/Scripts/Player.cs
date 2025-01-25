@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
     public static Player Instance;
 
-    string sceneName = SceneManager.GetActiveScene().name;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -132,24 +132,16 @@ public class Player : MonoBehaviour
             bubbles.Play();
         }
 
-        if(sceneName == "Juego")
-        {
-            transform.position = new Vector3(80,0,0);   
-        }
     }
 
     private void Awake()
     {
         
-        if (Instance == null)
-        {
+        
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-       else if (Instance != this)
-        {
-            Destroy(gameObject);
-        }
+            DontDestroyOnLoad(transform.parent.gameObject);
+        
+       
 
 
 
@@ -237,4 +229,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void OnCambioEscena(string sceneName)
+    {
+
+        if (sceneName == "Juego")
+        {
+            transform.position = new Vector3(80, 0, 0);
+        }
+    }
 }
