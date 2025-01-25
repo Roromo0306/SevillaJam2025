@@ -3,7 +3,7 @@ using UnityEngine;
 public class VidaEnemigos : MonoBehaviour
 {
 
-    public static float Vida_Normal = 5f, Vida_Tanque = 10f, Vida_Corre = 1f, Vida_Distancia = 3f;
+    public static float Vida_Normal = 5f, Vida_Tanque = 10f, Vida_Corre = 1f, Vida_Distancia = 3f, VidaBoss =20f;
 
  
 
@@ -25,6 +25,7 @@ public class VidaEnemigos : MonoBehaviour
         Vida_Tanque -= dañoAtaque;
         Vida_Corre -= dañoAtaque;
         Vida_Distancia -= dañoAtaque;
+        VidaBoss -= dañoAtaque;
 
         Debug.Log($"{name} recibió {dañoAtaque} de daño. Vida restante: {Vida_Normal}");
 
@@ -42,6 +43,10 @@ public class VidaEnemigos : MonoBehaviour
             Matar();
         }
         if (Vida_Distancia <= 0)
+        {
+            Matar();
+        }
+        if(VidaBoss <= 0)
         {
             Matar();
         }
