@@ -12,6 +12,7 @@ TagManager:
   - TiendaObjetos
   - TiendaPersonaje
   - Enemigo_Distancia
+  - Boss
   layers:
   - Default
   - TransparentFX
