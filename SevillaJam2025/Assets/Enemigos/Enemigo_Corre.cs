@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Enemigo_Corre : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float vida = 1f;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         

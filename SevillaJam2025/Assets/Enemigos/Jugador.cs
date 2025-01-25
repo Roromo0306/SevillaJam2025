@@ -9,7 +9,7 @@ public class Jugador : MonoBehaviour
     private Vector3 pos;
 
     //Daño y atacar
-    private GameObject jugador, enemigoN, enemigoT;
+    private GameObject jugador, enemigoN, enemigoT, enemigoC;
     private float vida = 5f;
     private float daño = 2f;
     private float distM = 2f;
@@ -27,6 +27,7 @@ public class Jugador : MonoBehaviour
         jugador = this.gameObject;
         enemigoN = GameObject.FindGameObjectWithTag("Enemigo_normal");
         enemigoT = GameObject.FindGameObjectWithTag("Enemigo_Tanque");
+        enemigoC = GameObject.FindGameObjectWithTag("Enemigo_Corre");
     }
 
     // Update is called once per frame
@@ -50,6 +51,12 @@ public class Jugador : MonoBehaviour
         {
             atacarT(enemigoT);
         }
+
+        float distC = Vector3.Distance(jugador.transform.position, enemigoC.transform.position);
+        if (distC <= distM)
+        {
+            atacarC(enemigoC);
+        }
     }
 
  
@@ -68,6 +75,15 @@ public class Jugador : MonoBehaviour
     public void atacarT(GameObject enemigo)
     {
         Enemigo_Tanque escript = enemigo.GetComponent<Enemigo_Tanque>();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            escript.vida = escript.vida - 1;
+        }
+    }
+
+    public void atacarC(GameObject enemigo)
+    {
+        Enemigo_Corre escript = enemigo.GetComponent<Enemigo_Corre>();
         if (Input.GetKeyDown(KeyCode.E))
         {
             escript.vida = escript.vida - 1;
