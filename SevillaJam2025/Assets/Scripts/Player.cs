@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float velocidadMovimiento = 6f;
-    float CoordX, CoordY, CoordZ;
+    public float CoordX, CoordY, CoordZ;
 
     public Rigidbody rb;
     Vector3 vector = new Vector3();
@@ -40,6 +40,13 @@ public class Player : MonoBehaviour
     public Animator animator;
 
     public ParticleSystem bubbles;
+
+    public static Player Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

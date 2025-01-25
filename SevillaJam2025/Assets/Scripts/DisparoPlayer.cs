@@ -23,7 +23,9 @@ public class DisparoPlayer : MonoBehaviour
 
     public void Disparar()
     {
-        Instantiate(bala, controladorBala.position, controladorBala.rotation);
+
+        var balaInstance = Instantiate(bala, controladorBala.position, controladorBala.rotation);
+       // balaInstance.direccion = 
     }
 
 
