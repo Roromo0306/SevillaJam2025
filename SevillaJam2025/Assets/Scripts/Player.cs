@@ -155,11 +155,14 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("TiendaPersonaje"))
         {
             panelTiendaPersonaje.SetActive(true);
+            panelPregunta.SetActive(false);
         }
 
         if (other.gameObject.CompareTag("TiendaObjetos"))
         {
             panelTiendaObjetos.SetActive(true);
+            panelPregunta.SetActive(false);
+
         }
     }
     public void OnTriggerExit(Collider other)
