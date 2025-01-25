@@ -4,12 +4,12 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
 
-    private float damage = 2f;
+    private float damage = 3.5f;
     public GameObject jugador, enemigo;
 
     //Perseguir
-    private float distM = 4;
-    private float velocidad = 3f;
+    private float distM = 20f;
+    private float velocidad = 1f;
     private Rigidbody rb;
     void Start()
     {
