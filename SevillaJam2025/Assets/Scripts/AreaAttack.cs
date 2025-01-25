@@ -18,6 +18,6 @@ public class AreaAttack : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         VidaEnemigos vida = other.GetComponent<VidaEnemigos>();
-        vida.Damage(player.dañoAtaque);
+        //vida.Damage(player.dañoAtaque);
     }
 }
