@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class Enemigo_Corre : MonoBehaviour
 {
-    public float vida = 1f;
+    
+    private float damage = 4f;
+    GameObject jugador, enemigo;
+
+    //Perseguir
+    private float distM = 5f;
+    private float velocidad = 4f;
+    private
     void Start()
     {
         

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Enemigo_Normal : MonoBehaviour
 {
-    public float vida = 5f;
+    
     private float damage = 2f;
     GameObject jugador, enemigo;
 
@@ -20,7 +20,7 @@ public class Enemigo_Normal : MonoBehaviour
     
     void Update()
     {
-        if (vida <= 0)
+        if (Vida_Enemigos.Vida_Normal <= 0)
         {
             Destroy(enemigo);
         }
@@ -30,7 +30,7 @@ public class Enemigo_Normal : MonoBehaviour
         {
             perseguir();
         }
-        Debug.Log("La vida del enemigo es " + vida);
+        Debug.Log("La vida del enemigo es " + Vida_Enemigos.Vida_Normal);
 
     }
 

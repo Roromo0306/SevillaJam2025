@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Enemigo_Tanque : MonoBehaviour
 {
-    public float vida = 10f;
+    
     private float damage = 3f;
     GameObject jugador, enemigo;
 
@@ -13,14 +13,16 @@ public class Enemigo_Tanque : MonoBehaviour
     private Rigidbody rb;
     void Start()
     {
+        
         enemigo = this.gameObject;
         jugador = GameObject.Find("jugador");
+        
     }
 
     
     void Update()
     {
-        if(vida<= 0)
+        if(Vida_Enemigos.Vida_Tanque <= 0)
         {
             Destroy(enemigo);
         }
@@ -29,7 +31,7 @@ public class Enemigo_Tanque : MonoBehaviour
         {
             perseguir();
         }
-        Debug.Log("La vida del enemigo es " + vida);
+        Debug.Log("La vida del enemigo es " + Vida_Enemigos.Vida_Tanque);
     }
 
     private void perseguir()
