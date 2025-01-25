@@ -5,12 +5,14 @@ public class Enemigo_Normal : MonoBehaviour
 {
     
     private float damage = 2f;
-    public GameObject jugador, enemigo;
+    GameObject jugador, enemigo;
 
     //Perseguir
     private float distM = 4;
     private float velocidad = 3f;
     private Rigidbody rb;
+    public GameObject moneda;
+    private Transform posicionMoneda;
     void Start()
     {
         enemigo = this.gameObject;
@@ -23,6 +25,7 @@ public class Enemigo_Normal : MonoBehaviour
         if (VidaEnemigos.Vida_Normal <= 0)
         {
             Destroy(enemigo);
+            Instantiate(moneda, posicionMoneda.position, Quaternion.identity);
         }
 
         float dist = Vector3.Distance(jugador.transform.position, enemigo.transform.position);
