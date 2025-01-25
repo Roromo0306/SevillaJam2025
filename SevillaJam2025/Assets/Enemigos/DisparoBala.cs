@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class DisparoBala : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private float damage = 2f;
+    private GameObject jugador, bala;
+
+    //Perseguir
+    private float velocidad = 3f;
+    private 
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         

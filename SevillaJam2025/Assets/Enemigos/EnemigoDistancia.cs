@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemigoDistancia : MonoBehaviour
 {
-    private float damage = 2f;
+    
     private GameObject jugador, enemigo;
 
     //Mirar
