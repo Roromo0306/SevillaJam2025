@@ -249,7 +249,7 @@ public class Player : MonoBehaviour
 
         if (sceneName == "Juego")
         {
-            transform.position = new Vector3(80, 0, 0);
+            transform.position = new Vector3(80, 2.25f, 0);
         }
     }
 }
