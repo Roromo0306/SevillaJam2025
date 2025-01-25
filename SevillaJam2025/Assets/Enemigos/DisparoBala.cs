@@ -9,24 +9,34 @@ public class DisparoBala : MonoBehaviour
     //Perseguir
     private float velocidad = 3f;
     private Rigidbody rb;
+    private Vector3 direccion;
+
+    private float tiempInicial = 0f;
+    private float tiempFinal = 200f;
     void Start()
     {
         bala = this.gameObject;
         jugador = GameObject.Find("Player");
+
+        direccion = (jugador.transform.position - transform.position).normalized;
     }
 
 
     void Update()
     {
-        perseguir();
+        transform.position += direccion * velocidad * Time.deltaTime;
+        temporizador();
+        Debug.Log("El tiempo inicial es " + tiempInicial);
     }
 
-    private void perseguir()
+    private void temporizador()
     {
-        bala.transform.position = Vector3.MoveTowards(bala.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
-
+        tiempInicial++;
+        if(tiempInicial == tiempFinal)
+        {
+            Destroy(this.gameObject);
+        }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         GameObject jugadorC = collision.gameObject;
