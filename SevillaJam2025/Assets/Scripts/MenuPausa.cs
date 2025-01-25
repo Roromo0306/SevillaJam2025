@@ -22,6 +22,7 @@ public class MenuPausa : MonoBehaviour
 
     public void VolverMenu(string nombre)
     {
+        Time.timeScale = 1f; //Para que al volver al menu salga la transicion con la animacion
         SceneManager.LoadScene(nombre);
     }
 
