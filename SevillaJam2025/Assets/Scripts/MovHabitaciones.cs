@@ -3,7 +3,13 @@ using UnityEngine;
 public class MovHabitaciones : MonoBehaviour
 {
     public Transform targetRoom; // La habitación a la que lleva esta puerta
-    public Transform player; // Referencia al jugador
+    Transform player; // Referencia al jugador
+
+    void Start()
+    {
+        player = Player.Instance.transform;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
