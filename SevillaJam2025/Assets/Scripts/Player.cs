@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         panelTiendaPersonaje.SetActive(false);
         panelTiendaObjetos.SetActive(false);
+        AttackArea.SetActive(false);
     }
 
     // Update is called once per frame

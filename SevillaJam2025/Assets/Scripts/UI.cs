@@ -15,6 +15,7 @@ public class UI : MonoBehaviour
     public int costeAtaque = 2;
 
     public bool clicked = false;
+    public int costeRafaga = 3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -117,7 +118,9 @@ public class UI : MonoBehaviour
 
             if (ContadorClicks >= 0)
             {
-                Debug.Log("Holaaa");
+                personaje.myCoins -= costeRafaga;
+                Debug.Log("Has comprado la rafaga de pompas");
+                Debug.Log("Me quedan " + personaje.myCoins);
                 ContadorClicks++;
                 clicked = true;
             }

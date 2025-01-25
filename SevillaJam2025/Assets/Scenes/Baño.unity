@@ -566,6 +566,7 @@ MonoBehaviour:
   plusAtaque: 1.2
   costeAtaque: 2
   clicked: 0
+  costeRafaga: 3
 --- !u!4 &207890838
 Transform:
   m_ObjectHideFlags: 0
@@ -938,63 +939,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1001 &549150984
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7385000195325366082, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.685773
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385000195325366082, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.32000095
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385000195325366082, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.4659243
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385000195325366082, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385000195325366082, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385000195325366082, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385000195325366082, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385000195325366082, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385000195325366082, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7385000195325366082, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7901519120518092466, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
-      propertyPath: m_Name
-      value: Enemigo_Tanque
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c202d663e1e5dc049a55874c163cc0a9, type: 3}
 --- !u!1 &558182459
 GameObject:
   m_ObjectHideFlags: 0
@@ -3694,4 +3638,3 @@ SceneRoots:
   - {fileID: 207890838}
   - {fileID: 2027707653}
   - {fileID: 1875872810}
-  - {fileID: 549150984}
