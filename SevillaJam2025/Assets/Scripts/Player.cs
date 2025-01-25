@@ -136,6 +136,19 @@ public class Player : MonoBehaviour
         
     }
 
+    public float direccionSigno()
+    {
+        if(CoordX < 0)
+        {
+            return -1;
+        }
+        else
+        {
+            return 1;
+
+        }
+    } 
+
     private IEnumerator Dash()
     {
         isDashing = true;
