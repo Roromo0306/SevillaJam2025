@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     public UI UI;
 
     public SpriteRenderer SpriteRenderer;
+    public Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
         panelTiendaObjetos.SetActive(false);
         AttackArea.SetActive(false);
         jugador = this.gameObject;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -103,6 +105,16 @@ public class Player : MonoBehaviour
 
         transform.localScale = scale;
 
+        if(CoordZ != 0 || CoordX != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+        
     }
 
     private IEnumerator Dash()
