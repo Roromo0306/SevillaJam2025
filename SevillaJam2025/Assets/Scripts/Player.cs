@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(transform.parent.gameObject);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -134,6 +135,14 @@ public class Player : MonoBehaviour
         }
 
         
+    }
+
+    public void OnCambioEscena(string sceneName)
+    {
+        if(sceneName == "Juego")
+        {
+            transform.position = new Vector3(80, 0, 0);
+        }
     }
 
     public float direccionSigno()
