@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
         AttackArea.SetActive(false);
         jugador = this.gameObject;
         animator = GetComponent<Animator>();
-        
+        bubbles.Stop();
     }
 
     // Update is called once per frame
@@ -81,6 +81,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 Attack();
+                animator.SetBool("isAttackingArea",true);
             }
             if (isAttacking)
             {
@@ -111,10 +112,14 @@ public class Player : MonoBehaviour
         if(CoordZ != 0 || CoordX != 0)
         {
             animator.SetBool("isRunning", true);
+            animator.SetBool("isAttackingArea", false);
+            bubbles.Play();
         }
         else
         {
             animator.SetBool("isRunning", false);
+           
+            bubbles.Play();
         }
 
         
