@@ -5,6 +5,7 @@ public class DisparoPlayer : MonoBehaviour
 {
     public Transform controladorBala;
     public GameObject bala;
+    public Player player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,7 +26,7 @@ public class DisparoPlayer : MonoBehaviour
     {
 
         var balaInstance = Instantiate(bala, controladorBala.position, controladorBala.rotation);
-       // balaInstance.direccion = 
+        balaInstance.GetComponent<BalaPlayer>().mirarBala(player.direccionSigno());
     }
 
 

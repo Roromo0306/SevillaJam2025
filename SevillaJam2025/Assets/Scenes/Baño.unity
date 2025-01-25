@@ -5418,6 +5418,10 @@ PrefabInstance:
       propertyPath: bala
       value: 
       objectReference: {fileID: 8110130215384527588, guid: 6109af74619ca294e8ab4acd5725cabc, type: 3}
+    - target: {fileID: 1577542865499610781, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2123033877}
     - target: {fileID: 1912698667117822094, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

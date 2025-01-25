@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,27 +11,26 @@ public class BalaPlayer : MonoBehaviour
 
     public Player player;
 
-    Vector2 direccion = new Vector2();
+    public float direccion;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = Player.Instance;
+        //player = Player.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (player.CoordX < 0)
-        {
-            transform.Translate(direccion * velocidad * Time.deltaTime);
-        }
-        else if (player.CoordX > 0)
-        {
-            transform.Translate(direccion * velocidad * Time.deltaTime);
-        }
+        transform.Translate(new Vector2(direccion * velocidad * Time.deltaTime, 0), Space.World);
+       
     }
+
+    public void mirarBala(float direccion)
+    {
+        this.direccion = direccion;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
