@@ -3469,6 +3469,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3970443615546599920, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+      propertyPath: m_Size.x
+      value: 1.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970443615546599920, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+      propertyPath: m_Size.y
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970443615546599920, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4105939951201627419, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
       propertyPath: UI
       value: 
