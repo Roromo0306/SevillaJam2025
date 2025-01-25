@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public float vida = 6f;
 
     public float dañoAtaque = 10f;
+    public float dañoDisparo = 4f;
 
     public GameObject AttackArea;
     public bool isAttacking = false;
@@ -49,7 +50,7 @@ public class Player : MonoBehaviour
         AttackArea.SetActive(false);
         jugador = this.gameObject;
         animator = GetComponent<Animator>();
-        bubbles.Stop();
+        //bubbles.Stop();
     }
 
     // Update is called once per frame
