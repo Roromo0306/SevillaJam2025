@@ -11,7 +11,7 @@ public class Jugador : MonoBehaviour
 
     //Daño y atacar
     private GameObject jugador, enemigoN, enemigoT, enemigoC;
-    private float vida = 5f;
+    public float vida = 5f;
     private float daño = 2f;
     private float distM = 2f;
     //Retroceso
