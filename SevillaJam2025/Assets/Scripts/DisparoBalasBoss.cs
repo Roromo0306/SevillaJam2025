@@ -22,12 +22,6 @@ public class DisparoBalasBoss : MonoBehaviour
             GenerarBalas();
             tiemRes = tiemEn;
         }
-
-        r= Random.Range(0, 360);
-        r1= Random.Range(0, 360);
-        r2= Random.Range(0, 360);
-        r3= Random.Range(0, 360);
-        r4= Random.Range(0, 360);
     }
 
     private void GenerarBalas()
