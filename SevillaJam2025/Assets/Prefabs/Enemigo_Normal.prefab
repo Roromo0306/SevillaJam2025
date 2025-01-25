@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6215119903340850221}
   - component: {fileID: 9088583294800543049}
   - component: {fileID: 4387867646856704981}
+  - component: {fileID: 8922930742305999988}
   m_Layer: 0
   m_Name: Enemigo_Normal
   m_TagString: Enemigo_normal
@@ -147,5 +148,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e2d86fee2026845a6717f94dbf64bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8922930742305999988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5805351333702380080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a071d9bcbf2df74da9178e2ea55b36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
