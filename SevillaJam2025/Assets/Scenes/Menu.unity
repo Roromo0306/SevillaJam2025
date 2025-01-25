@@ -1000,6 +1000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044482ff81cd50c408e70f2f7090841c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panelPregunta: {fileID: 0}
 --- !u!4 &1259930784
 Transform:
   m_ObjectHideFlags: 0

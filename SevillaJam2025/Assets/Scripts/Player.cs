@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         panelTiendaPersonaje.SetActive(false);
         panelTiendaObjetos.SetActive(false);
+        panelPregunta.SetActive(false);
         AttackArea.SetActive(false);
         jugador = this.gameObject;
         animator = GetComponent<Animator>();
@@ -156,29 +157,38 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("TiendaPersonaje"))
         {
             panelTiendaPersonaje.SetActive(true);
-            panelPregunta.SetActive(false);
         }
 
         if (other.gameObject.CompareTag("TiendaObjetos"))
         {
             panelTiendaObjetos.SetActive(true);
-            panelPregunta.SetActive(false);
-
         }
+
+        if (other.gameObject.CompareTag("Vater"))
+        {
+            panelPregunta.SetActive(true);
+        }
+
+
     }
     public void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("TiendaPersonaje"))
         {
             panelTiendaPersonaje.SetActive(false);
-            panelPregunta.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("TiendaObjetos"))
         {
             panelTiendaObjetos.SetActive(false);
-            panelPregunta.SetActive(true);
         }
+
+        if (other.gameObject.CompareTag("Vater"))
+        {
+            panelPregunta.SetActive(false);
+        }
+
+
     }
 
     private void Attack()
