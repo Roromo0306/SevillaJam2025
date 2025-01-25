@@ -252,6 +252,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4721855}
   m_CullTransparentMesh: 1
+--- !u!1001 &75147642
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1227861994141131393, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_Name
+      value: Monedas (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1318c90df144954189138a7a3d1807c, type: 3}
 --- !u!1 &189732095
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +348,11 @@ MonoBehaviour:
   isDashing: 0
   myCoins: 0
   panelTiendaPersonaje: {fileID: 558182459}
+  panelTiendaObjetos: {fileID: 593050105}
+  vida: 3
+  "da\xF1oAtaque": 10
+  AttackArea: {fileID: 1025665177}
+  isAttacking: 0
 --- !u!54 &189732097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -406,7 +468,8 @@ Transform:
   m_LocalPosition: {x: -1.4709327, y: 0.96, z: -4.8104076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1025665179}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &207047548
@@ -495,7 +558,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb1d8a56b5daaf47b656cb2ba90f638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personaje: {fileID: 189732096}
   costeVelocidad: 1
+  plusVida: 1
+  costeVida: 2
+  plusAtaque: 1.2
+  costeAtaque: 2
 --- !u!4 &207890838
 Transform:
   m_ObjectHideFlags: 0
@@ -593,7 +661,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 208235418}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 207890837}
+        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+        m_MethodName: masVida
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &208235418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,12 +1024,12 @@ GameObject:
   - component: {fileID: 593050108}
   - component: {fileID: 593050107}
   m_Layer: 5
-  m_Name: PanelTiendaJugador (1)
+  m_Name: PanelTiendaObjetos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &593050106
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1008,6 +1088,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593050105}
   m_CullTransparentMesh: 1
+--- !u!1001 &657394903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1227861994141131393, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_Name
+      value: Monedas (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1318c90df144954189138a7a3d1807c, type: 3}
 --- !u!1 &749575946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1425,7 @@ GameObject:
   - component: {fileID: 850801770}
   - component: {fileID: 850801769}
   m_Layer: 5
-  m_Name: Vida
+  m_Name: Prision Pompa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1409,7 +1546,7 @@ GameObject:
   - component: {fileID: 901046505}
   - component: {fileID: 901046504}
   m_Layer: 5
-  m_Name: "Da\xF1o"
+  m_Name: RafagaPompa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1790,6 +1927,59 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1025665177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025665179}
+  - component: {fileID: 1025665178}
+  m_Layer: 0
+  m_Name: AttackArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1025665178
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025665177}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1025665179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025665177}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8509327, y: 0.050000012, z: -0.039592266}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 189732101}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1059971435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1804,7 +1994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.93
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1813,6 +2003,63 @@ PrefabInstance:
     - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+--- !u!1001 &1194058667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1227861994141131393, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_Name
+      value: Monedas (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2312,7 +2559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Da\xF1o"
+  m_text: Rafaga Pompa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2470,6 +2717,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813846211}
   m_CullTransparentMesh: 1
+--- !u!1 &1875872808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1875872810}
+  - component: {fileID: 1875872809}
+  m_Layer: 0
+  m_Name: Col_TiendaObjetos
+  m_TagString: TiendaObjetos
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1875872809
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875872808}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1875872810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875872808}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.53, y: 1.46, z: -7.7}
+  m_LocalScale: {x: 5.55, y: 3.38, z: 3.38}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1884689068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Vida
+  m_text: Prision Pompa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2688,7 +2988,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1941870462}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 207890837}
+        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+        m_MethodName: masAtaque
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1941870462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2784,7 +3096,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Velocidad
+  m_text: Pompa Escudo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2876,7 +3188,7 @@ GameObject:
   - component: {fileID: 1990279238}
   - component: {fileID: 1990279237}
   m_Layer: 5
-  m_Name: Velocidad
+  m_Name: PompaEscudo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2995,7 +3307,7 @@ GameObject:
   - component: {fileID: 2027707653}
   - component: {fileID: 2027707652}
   m_Layer: 0
-  m_Name: Colliders
+  m_Name: Col_TiendaPersonaje
   m_TagString: TiendaPersonaje
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3051,7 +3363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4709327
+      value: -5.82
       objectReference: {fileID: 0}
     - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3151,7 +3463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' Mejoras de jugador'
+  m_text: Objetos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3244,7 +3556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4709327
+      value: -2.99
       objectReference: {fileID: 0}
     - target: {fileID: 6222295895828471936, guid: e1318c90df144954189138a7a3d1807c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3299,7 +3611,11 @@ SceneRoots:
   - {fileID: 2044338982}
   - {fileID: 1059971435}
   - {fileID: 207047548}
+  - {fileID: 1194058667}
+  - {fileID: 657394903}
+  - {fileID: 75147642}
   - {fileID: 248932167}
   - {fileID: 790477606}
   - {fileID: 207890838}
   - {fileID: 2027707653}
+  - {fileID: 1875872810}

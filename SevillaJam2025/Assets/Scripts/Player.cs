@@ -19,11 +19,22 @@ public class Player : MonoBehaviour
     public int myCoins = 0;
 
     public GameObject panelTiendaPersonaje;
+    public GameObject panelTiendaObjetos;
+
+    public int vida = 3;
+
+    public float dañoAtaque = 10f;
+
+    public GameObject AttackArea;
+    public bool isAttacking = false;
+    private float timeToAttack = 0.5f;
+    private float timer = 0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         panelTiendaPersonaje.SetActive(false);
+        panelTiendaObjetos.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,7 +55,21 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Attack();
+        }
+        if (isAttacking)
+        {
+            timer += Time.deltaTime;
+            if(timer >= timeToAttack)
+            {
+                timer = 0f;
+                isAttacking = false;
+                AttackArea.SetActive(false);
+            }
+        }
     }
 
     private IEnumerator Dash()
@@ -76,6 +101,11 @@ public class Player : MonoBehaviour
         {
             panelTiendaPersonaje.SetActive(true);
         }
+
+        if (other.gameObject.CompareTag("TiendaObjetos"))
+        {
+            panelTiendaObjetos.SetActive(true);
+        }
     }
     public void OnTriggerExit(Collider other)
     {
@@ -83,7 +113,17 @@ public class Player : MonoBehaviour
         {
             panelTiendaPersonaje.SetActive(false);
         }
+
+        if (other.gameObject.CompareTag("TiendaObjetos"))
+        {
+            panelTiendaObjetos.SetActive(false) ;
+        }
     }
 
+    private void Attack()
+    {
+        isAttacking = true;
+        AttackArea.SetActive(isAttacking);
+    }
 
 }
