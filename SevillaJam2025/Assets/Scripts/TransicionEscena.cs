@@ -16,7 +16,10 @@ public class TransicionEscena : MonoBehaviour
 
     void Update()
     {
-        StartCoroutine(CambiarEscena());
+        if (Input.GetKeyDown(KeyCode.Space)) //Puesto con tecla para cambiarlo
+        {
+            StartCoroutine(CambiarEscena());
+        }
     }
 
     IEnumerator CambiarEscena()
@@ -41,24 +44,15 @@ public class TransicionEscena : MonoBehaviour
 
 
     /*public float tiempo = 5f; //Cambiar segun el tiempo que dure la animacion inicial
-    public float contadorTransicion = 1.5f;
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
-
-    
+       
     void Update()
     {
         //Transicion de animacion a juego
         tiempo -= Time.deltaTime;
+
         if (tiempo <= 0)
         {
-            animator.SetBool("Transicion", true);
-            contadorTransicion -= Time.deltaTime;
-
-            if (contadorTransicion <= 0)
-                SceneManager.LoadScene("Prueba2Transicion");
+            StartCoroutine(CambiarEscena()); 
         }
     }*/
 }

@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - TiendaPersonaje
-  - Coin
-  - TiendaObjetos
+  - Undefined
+  - Enemigo_normal
+  - Enemigo_Tanque
+  - Enemigo_Corre
   layers:
   - Default
   - TransparentFX
