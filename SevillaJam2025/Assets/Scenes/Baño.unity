@@ -5581,6 +5581,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 593050105}
     - target: {fileID: 8930943204141200421, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+      propertyPath: velocidadMovimiento
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930943204141200421, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
       propertyPath: panelTiendaPersonaje
       value: 
       objectReference: {fileID: 558182459}
