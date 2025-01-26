@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour
 
     // Perseguir
     private float distM = 20f;
-    private float distN = 4f;
+    private float distN = 3f;
     private float velocidad = 1f;
     private float desaceleracion = 0.1f;
     private Rigidbody rb;
@@ -72,25 +72,25 @@ public class Boss : MonoBehaviour
 
         // Saltar
         Vector3 saltoPos = transform.position;
-        saltoPos.y += 2; // Altura del salto
+        saltoPos.y += 2; 
         float tiempoTranscurrido = 0f;
 
         while (tiempoTranscurrido < tiempoEnElAire)
         {
             transform.position = Vector3.Lerp(transform.position, saltoPos, tiempoTranscurrido / tiempoEnElAire);
             tiempoTranscurrido += Time.deltaTime;
-            yield return null; // Espera un frame
+            yield return null; 
         }
 
         // Regresar al suelo
-        saltoPos.y -= 2; // Volver a la altura original
+        saltoPos.y -= 2; 
         tiempoTranscurrido = 0f;
 
         while (tiempoTranscurrido < tiempoEnElAire)
         {
             transform.position = Vector3.Lerp(transform.position, saltoPos, tiempoTranscurrido / tiempoEnElAire);
             tiempoTranscurrido += Time.deltaTime;
-            yield return null; // Espera un frame
+            yield return null; 
         }
         float distT = Vector3.Distance(jugador.transform.position, transform.position);
         if (distT < distN)
