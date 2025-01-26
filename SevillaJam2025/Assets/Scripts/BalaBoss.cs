@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BalaBoss : MonoBehaviour
@@ -14,12 +15,13 @@ public class BalaBoss : MonoBehaviour
     private float tiempFinal = 7000f;
 
     private BoxCollider Trig;
+    private bool accionA = true;
     void Start()
     {
         bala = this.gameObject;
         jugador= GameObject.FindGameObjectWithTag("PlayerVerdadero");
         Trig = bala.GetComponent<BoxCollider>();
-        Trig.isTrigger = true;
+        StartCoroutine(Alternar());
 
         direccion = (jugador.transform.position - transform.position).normalized;
     }
@@ -40,11 +42,27 @@ public class BalaBoss : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        if(tiempInicial == 100)
+    
+        
+    }
+
+    IEnumerator Alternar()
+    {
+        while (true)
         {
-            Trig.isTrigger = false;
+            if (accionA)
+            {
+                Trig.isTrigger = true;
+            }
+            else
+            {
+                Trig.isTrigger = false;
+            }
+            accionA = !accionA;
+            yield return new WaitForSeconds(4f);
         }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         GameObject jugadorC = collision.gameObject;
