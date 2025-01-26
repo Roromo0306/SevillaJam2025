@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8930943204141200421}
   - component: {fileID: 3461851454915860897}
   - component: {fileID: 1577542865499610781}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: PlayerVerdadero
   m_Icon: {fileID: 0}
@@ -165,9 +165,13 @@ MonoBehaviour:
   canDash: 1
   isDashing: 0
   myCoins: 0
+  monedasUI: {fileID: 0}
   panelTiendaPersonaje: {fileID: 0}
   panelTiendaObjetos: {fileID: 0}
   panelPregunta: {fileID: 0}
+  panelMuerte: {fileID: 0}
+  imagenDisparoRafagas: {fileID: 0}
+  imagenDisparo: {fileID: 0}
   vida: 3
   "da\xF1oAtaque": 10
   "da\xF1oDisparo": 4
@@ -226,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 366575164642995815}
   - component: {fileID: 3970443615546599920}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7613234224950824268}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ControladorDisparo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +315,7 @@ GameObject:
   - component: {fileID: 505866591127055056}
   - component: {fileID: 6367137656295264615}
   - component: {fileID: 1279662925046871396}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particles Ataque
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5144,7 +5148,7 @@ GameObject:
   - component: {fileID: 5448191095399972411}
   - component: {fileID: 5966843349841853836}
   - component: {fileID: 1912698667117822094}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -16,7 +16,7 @@ public class BalaPlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //player = Player.Instance;
+        player = Player.Instance;
     }
 
     // Update is called once per frame
@@ -32,13 +32,14 @@ public class BalaPlayer : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        VidaEnemigos vida = other.GetComponent<VidaEnemigos>();
+        VidaEnemigos vida = collision.collider.GetComponent<VidaEnemigos>();
         if (vida != null)
         {
             Debug.Log("Disparo recibido");
             vida.DamageDisparo(player.dañoDisparo);
         }
     }
+    
 }

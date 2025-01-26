@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7852859144031589792}
   - component: {fileID: 5729362070123214607}
   - component: {fileID: -6744337371987629880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BalaPompa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
