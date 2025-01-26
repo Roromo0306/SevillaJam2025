@@ -8,6 +8,7 @@ public class TransicionEscena : MonoBehaviour
     private Animator animator;
 
     [SerializeField] private AnimationClip animacionFinal;
+    public float tiempo = 10f;
 
     void Start()
     {
@@ -16,7 +17,14 @@ public class TransicionEscena : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) //Puesto con tecla para cambiarlo
+        /*if (Input.GetKeyDown(KeyCode.Space)) //Puesto con tecla para cambiarlo
+        {
+            StartCoroutine(CambiarEscena());
+        }*/
+
+        tiempo -= Time.deltaTime;
+
+        if (tiempo <= 0)
         {
             StartCoroutine(CambiarEscena());
         }

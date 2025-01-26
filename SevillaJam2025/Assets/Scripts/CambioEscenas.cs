@@ -10,6 +10,11 @@ public class CambioEscenas : MonoBehaviour
         Player.Instance.OnCambioEscena(nombre);
     }
 
+    public void CambiarCinematica(string nombre)
+    {
+        SceneManager.LoadScene(nombre);
+    }
+
     public void QuitarJuego()
     {
         Application.Quit();
