@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public GameObject panelTiendaPersonaje;
     public GameObject panelTiendaObjetos;
     public GameObject panelPregunta;
+    public GameObject panelMuerte;
 
     public float vida = 6f;
 

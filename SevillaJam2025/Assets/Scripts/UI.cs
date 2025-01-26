@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class UI : MonoBehaviour
 {
     public Player personaje;
@@ -161,6 +161,11 @@ public class UI : MonoBehaviour
         {
             Debug.Log("No hay mas monedas ooo");
         }
+    }
+    public void volverBanio()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Baño");
     }
 }
 

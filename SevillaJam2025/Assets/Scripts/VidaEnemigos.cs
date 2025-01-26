@@ -5,7 +5,7 @@ public class VidaEnemigos : MonoBehaviour
 
     public static float Vida_Normal = 5f, Vida_Tanque = 10f, Vida_Corre = 1f, Vida_Distancia = 3f, VidaBoss =20f;
 
- 
+    public Player player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,6 +55,8 @@ public class VidaEnemigos : MonoBehaviour
     private void Matar()
     {
         Debug.Log("Perro Muertoooo");
+        player.panelMuerte.SetActive(true);
+        Time.timeScale = 0;
         Destroy(gameObject);
     }
 
