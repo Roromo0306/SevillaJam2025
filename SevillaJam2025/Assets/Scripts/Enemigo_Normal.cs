@@ -16,7 +16,7 @@ public class Enemigo_Normal : MonoBehaviour
     void Start()
     {
         enemigo = this.gameObject;
-        // jugador = GameObject.Find("Player");
+        
         jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
 
 

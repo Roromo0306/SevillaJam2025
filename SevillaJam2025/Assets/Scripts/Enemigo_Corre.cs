@@ -16,7 +16,7 @@ public class Enemigo_Corre : MonoBehaviour
     void Start()
     {
         enemigo = this.gameObject;
-        jugador = GameObject.Find("Player");
+        jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
     }
 
     
@@ -44,7 +44,7 @@ public class Enemigo_Corre : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameObject jugadorC = collision.gameObject;
-        if(jugadorC.tag == "Player")
+        if(jugadorC.tag == "PlayerVerdadero")
         {
             Player Jscript = jugador.GetComponent<Player>();
             Jscript.vida = Jscript.vida - 10;
