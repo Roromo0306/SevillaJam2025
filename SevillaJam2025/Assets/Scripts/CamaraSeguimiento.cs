@@ -17,6 +17,10 @@ public class CamaraSeguimiento : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (player == null)
+        {
+            return;
+        }
         transform.position = new Vector3(fixedX, height, player.position.z - 12f);
     }
 

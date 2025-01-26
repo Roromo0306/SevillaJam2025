@@ -25,7 +25,10 @@ public class Enemigo_Corre : MonoBehaviour
     
     void Update()
     {
-        
+        if (jugador == null)
+        {
+            return;
+        }
         if (VidaEnemigos.Vida_Corre <= 0)
         {
             Destroy(enemigo);

@@ -18,7 +18,11 @@ public class EnemigoDistancia : MonoBehaviour
    
     void Update()
     {
-        if(VidaEnemigos.Vida_Distancia <= 0)
+        if (jugador == null)
+        {
+            return;
+        }
+        if (VidaEnemigos.Vida_Distancia <= 0)
         {
             Destroy(enemigo);
         }

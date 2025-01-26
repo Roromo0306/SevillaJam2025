@@ -21,9 +21,12 @@ public class DisparoBala : MonoBehaviour
     {
         bala = this.gameObject;
         jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
-        
-        
-        
+
+
+        if (jugador == null)
+        {
+            return;
+        }
 
         direccion = (jugador.transform.position - transform.position).normalized;
     }

@@ -25,7 +25,9 @@ public class Enemigo_Normal : MonoBehaviour
     
     void Update()
     {
-       
+        if (jugador == null) {
+            return;
+        }
       
         if (VidaEnemigos.Vida_Normal <= 0)
         {

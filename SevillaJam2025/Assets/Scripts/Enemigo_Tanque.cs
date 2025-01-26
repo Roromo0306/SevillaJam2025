@@ -22,7 +22,11 @@ public class Enemigo_Tanque : MonoBehaviour
     
     void Update()
     {
-        if(VidaEnemigos.Vida_Tanque <= 0)
+        if (jugador == null)
+        {
+            return;
+        }
+        if (VidaEnemigos.Vida_Tanque <= 0)
         {
             Destroy(enemigo);
         }

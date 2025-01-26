@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
         string monedas = myCoins.ToString();
      
         if (vida <= 0)
@@ -137,7 +138,10 @@ public class Player : MonoBehaviour
                     AttackArea.SetActive(false);
                 }
             }
-        
+        /*if(SceneManager.GetActiveScene().name == "Juego")
+        {
+            panelMuerte.SetActive(false);
+        }*/
 
         Vector3 scale = transform.localScale;
 
