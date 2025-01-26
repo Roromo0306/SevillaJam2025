@@ -14,6 +14,7 @@ TagManager:
   - Enemigo_Distancia
   - Boss
   - Vater
+  - PlayerVerdadero
   layers:
   - Default
   - TransparentFX

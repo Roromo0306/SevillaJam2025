@@ -16,12 +16,17 @@ public class Enemigo_Normal : MonoBehaviour
     void Start()
     {
         enemigo = this.gameObject;
-        jugador = GameObject.Find("Player");
+        // jugador = GameObject.Find("Player");
+        jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
+
+
     }
 
     
     void Update()
     {
+       
+      
         if (VidaEnemigos.Vida_Normal <= 0)
         {
             Destroy(enemigo);
@@ -29,11 +34,14 @@ public class Enemigo_Normal : MonoBehaviour
         }
 
         float dist = Vector3.Distance(jugador.transform.position, enemigo.transform.position);
+        
         if (dist < distM)
         {
+           
             perseguir();
         }
-       // Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Normal);
+       //Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Normal);
+       //Debug.Log("La distancia es " + dist);
 
     }
 
@@ -47,7 +55,7 @@ public class Enemigo_Normal : MonoBehaviour
     {
         GameObject jugadorC = collision.gameObject;
 
-        if (jugadorC.tag == "Player")
+        if (jugadorC.tag == "PlayerVerdadero")
         {
             ataque(jugador);
         }
@@ -56,8 +64,10 @@ public class Enemigo_Normal : MonoBehaviour
     void ataque(GameObject jugador)
     {
         Player Jscript = jugador.GetComponent<Player>();
+
         if (Jscript != null)
         {
+            
             Jscript.RecibirDaño(damage);
         }
     }
