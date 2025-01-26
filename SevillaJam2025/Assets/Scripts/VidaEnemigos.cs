@@ -11,7 +11,7 @@ public class VidaEnemigos : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("PlayerVerdadero").transform.GetChild(0).GetComponent<Player>();
        
     }
 
@@ -56,7 +56,7 @@ public class VidaEnemigos : MonoBehaviour
 
     private void Matar()
     {
-
+        
         Destroy(gameObject);
         if(player == null)
         {

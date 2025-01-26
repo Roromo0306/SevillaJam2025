@@ -37,7 +37,7 @@ public class DisparoBala : MonoBehaviour
         transform.position += direccion * velocidad * Time.deltaTime;
         
         temporizador();
-        Debug.Log("El tiempo inicial es " + tiempInicial);
+        //Debug.Log("El tiempo inicial es " + tiempInicial);
     }
 
     private void temporizador()
