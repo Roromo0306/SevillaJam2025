@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    private float damage = 3.5f;
+    private float damage = 3f;
     private GameObject jugador;
 
     // Perseguir
     private float distM = 20f;
-    private float distN = 5f;
+    private float distN = 4f;
     private float velocidad = 1f;
     private float desaceleracion = 0.1f;
     private Rigidbody rb;
 
     private bool persiguiendo = true;
 
-    private float tiempoPersecucion = 3f;
+    private float tiempoPersecucion = 15f;
     private float tiempoEsperaSalto = 2f;
     private float tiempoEnElAire = 0.5f;
 
@@ -40,6 +40,7 @@ public class Boss : MonoBehaviour
             if (dist < distM)
             {
                 Perseguir();
+
             }
         }
     }
@@ -102,7 +103,9 @@ public class Boss : MonoBehaviour
         }
 
         // Esperar en el suelo
+        Debug.Log("Tiempo espera salto " + tiempoEsperaSalto);
         yield return new WaitForSeconds(tiempoEsperaSalto);
+        yield return StartCoroutine(Saltar());
     }
 
     private void OnCollisionEnter(Collision collision)
