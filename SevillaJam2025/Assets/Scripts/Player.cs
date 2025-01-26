@@ -226,6 +226,8 @@ public class Player : MonoBehaviour
             panelPregunta.SetActive(true);
         }
 
+       
+
 
     }
     public void OnTriggerExit(Collider other)
@@ -244,6 +246,8 @@ public class Player : MonoBehaviour
         {
             panelPregunta.SetActive(false);
         }
+
+        
 
 
     }

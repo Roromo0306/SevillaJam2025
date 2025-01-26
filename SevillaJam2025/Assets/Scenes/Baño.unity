@@ -6460,7 +6460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1891777501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6578,7 +6578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1934374261
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7420,6 +7420,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 2123033881}
+    - target: {fileID: 8930943204141200421, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+      propertyPath: panelBloq
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8930943204141200421, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
       propertyPath: AttackArea
       value: 
