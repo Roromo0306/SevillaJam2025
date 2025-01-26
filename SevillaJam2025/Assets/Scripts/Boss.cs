@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -8,6 +9,7 @@ public class Boss : MonoBehaviour
 
     // Perseguir
     private float distM = 20f;
+    private float distN = 5f;
     private float velocidad = 1f;
     private float desaceleracion = 0.1f;
     private Rigidbody rb;
@@ -44,7 +46,7 @@ public class Boss : MonoBehaviour
 
     private void Perseguir()
     {
-        transform.LookAt(jugador.transform.position);
+        //transform.LookAt(jugador.transform.position);
         transform.position = Vector3.MoveTowards(transform.position, jugador.transform.position, velocidad * Time.deltaTime);
     }
 
@@ -88,6 +90,15 @@ public class Boss : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, saltoPos, tiempoTranscurrido / tiempoEnElAire);
             tiempoTranscurrido += Time.deltaTime;
             yield return null; // Espera un frame
+        }
+        float distT = Vector3.Distance(jugador.transform.position, transform.position);
+        if (distT < distN)
+        {
+            Player Jscript = jugador.GetComponent<Player>();
+            if (Jscript != null)
+            {
+                Jscript.RecibirDaño(damage);
+            }
         }
 
         // Esperar en el suelo
