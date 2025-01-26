@@ -31,7 +31,10 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 
     public void masVelocidad()
@@ -175,6 +178,10 @@ public class UI : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Baño");
     }
+
+   
+      
+    
 }
 
     
