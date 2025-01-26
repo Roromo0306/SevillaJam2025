@@ -1293,7 +1293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &248932164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,8 +1407,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.85882354, g: 0.85882354, b: 0.64705884, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.90943396, g: 0.71056485, b: 0.25223923, a: 1}
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1835,8 +1835,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.90188676, g: 0.90188676, b: 0.81510144, a: 1}
-  m_Intensity: 7
+  m_Color: {r: 0.6497757, g: 0.9904475, b: 0.9924528, a: 1}
+  m_Intensity: 25
   m_Range: 13.31
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2195,8 +2195,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.90188676, g: 0.90188676, b: 0.81510144, a: 1}
-  m_Intensity: 7
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 20
   m_Range: 13.31
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4364,8 +4364,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.90188676, g: 0.90188676, b: 0.81510144, a: 1}
-  m_Intensity: 7
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 20
   m_Range: 13.31
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4648,8 +4648,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.90188676, g: 0.90188676, b: 0.81510144, a: 1}
-  m_Intensity: 7
+  m_Color: {r: 0.7096974, g: 0.98419, b: 0.9924528, a: 1}
+  m_Intensity: 25
   m_Range: 13.31
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4876,8 +4876,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.85660374, g: 0.85660374, b: 0.64487714, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.93207544, g: 0.80992776, b: 0.5821074, a: 1}
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
