@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VidaEnemigos : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class VidaEnemigos : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).GetComponent<Player>();
-        player.panelMuerte.SetActive(false);
+       
     }
 
     // Update is called once per frame
@@ -55,10 +56,13 @@ public class VidaEnemigos : MonoBehaviour
 
     private void Matar()
     {
-        Debug.Log("Perro Muertoooo");
-        player.panelMuerte.SetActive(true);
-        Time.timeScale = 0;
+
         Destroy(gameObject);
+        if(player == null)
+        {
+            SceneManager.LoadScene("Baño");
+        }
+        
     }
 
     public void DamageDisparo(float dañoAtaque)
