@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     float dashCooldown = 0.3f;
 
     public int myCoins = 0;
+    public TextMeshProUGUI monedasUI;
 
     public GameObject panelTiendaPersonaje;
     public GameObject panelTiendaObjetos;
@@ -59,15 +61,15 @@ public class Player : MonoBehaviour
         AttackArea.SetActive(false);
         jugador = this.gameObject;
         animator = GetComponent<Animator>();
-       
+       panelMuerte.SetActive(false);
         bubblesAttack.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
+        string monedas = myCoins.ToString();
+     
         if (vida <= 0)
         {
             Debug.Log("El jugador ha muerto");
@@ -204,7 +206,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Coin"))
         {
             myCoins++; ;
-            
+            monedasUI.text = myCoins.ToString();
             Destroy(collision.gameObject);
         }
     }

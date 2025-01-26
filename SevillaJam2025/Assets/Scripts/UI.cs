@@ -49,6 +49,7 @@ public class UI : MonoBehaviour
                 personaje.velocidadMovimiento *= plusVelocidad;
                 Debug.Log("La velocidad ahora es " + personaje.velocidadMovimiento);
                 personaje.myCoins -= costeVelocidad;
+                personaje.monedasUI.text = personaje.myCoins.ToString();
                 Debug.Log("Me quedan " + personaje.myCoins);
                 ContadorClicksmasVelocidad++;
             }
@@ -75,6 +76,7 @@ public class UI : MonoBehaviour
                 personaje.vida += plusVida;
                 Debug.Log("La vida ahora es " + personaje.vida);
                 personaje.myCoins -= costeVida;
+                personaje.monedasUI.text = personaje.myCoins.ToString();
                 Debug.Log("Me quedan " + personaje.myCoins);
                 ContadorClicksmasVida++;
             }
@@ -101,6 +103,7 @@ public class UI : MonoBehaviour
                 personaje.dañoAtaque *= plusAtaque;
                 Debug.Log("El Ataque ahora es " + personaje.dañoAtaque);
                 personaje.myCoins -= costeAtaque;
+                personaje.monedasUI.text = personaje.myCoins.ToString();
                 Debug.Log("Me quedan " + personaje.myCoins);
                 ContadorClicksmasAtaque++;
             }
@@ -127,6 +130,7 @@ public class UI : MonoBehaviour
                 personaje.myCoins -= costeRafaga;
                 Debug.Log("Has comprado la rafaga de pompas");
                 Debug.Log("Me quedan " + personaje.myCoins);
+                personaje.monedasUI.text = personaje.myCoins.ToString();
                 ContadorClicks++;
                 clicked = true;
             }
@@ -150,8 +154,10 @@ public class UI : MonoBehaviour
             if (ContadorClicksDisparo >= 0)
             {
                 personaje.myCoins -= costeDisparo;
+                personaje.monedasUI.text = personaje.myCoins.ToString();
                 Debug.Log("Has comprado el disparo de pompas");
                 Debug.Log("Me quedan " + personaje.myCoins);
+                
                 ContadorClicksDisparo++;
                 clicked = true;
             }
