@@ -7156,6 +7156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jefe
       objectReference: {fileID: 0}
+    - target: {fileID: 7248338974390673719, guid: 51183014c7635e847982d9b4435877b1, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 7681447015660926400, guid: 51183014c7635e847982d9b4435877b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
