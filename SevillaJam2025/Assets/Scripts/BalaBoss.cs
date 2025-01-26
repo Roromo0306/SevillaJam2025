@@ -11,11 +11,15 @@ public class BalaBoss : MonoBehaviour
     private Vector3 direccion;
 
     private float tiempInicial = 0f;
-    private float tiempFinal = 3500f;
+    private float tiempFinal = 7000f;
+
+    private BoxCollider Trig;
     void Start()
     {
         bala = this.gameObject;
         jugador= GameObject.FindGameObjectWithTag("PlayerVerdadero");
+        Trig = bala.GetComponent<BoxCollider>();
+        Trig.isTrigger = true;
 
         direccion = (jugador.transform.position - transform.position).normalized;
     }
@@ -35,6 +39,10 @@ public class BalaBoss : MonoBehaviour
         if (tiempInicial == tiempFinal)
         {
             Destroy(this.gameObject);
+        }
+        if(tiempInicial == 100)
+        {
+            Trig.isTrigger = false;
         }
     }
     private void OnCollisionEnter(Collision collision)

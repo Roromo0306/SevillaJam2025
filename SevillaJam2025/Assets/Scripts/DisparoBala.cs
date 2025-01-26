@@ -13,7 +13,7 @@ public class DisparoBala : MonoBehaviour
     private Vector3 direccion;
 
     private float tiempInicial = 0f;
-    private float tiempFinal = 3500f;
+    private float tiempFinal = 200f;
 
   
 
