@@ -8,10 +8,12 @@ public class MovHabitaciones : MonoBehaviour
     Transform player;
     CamaraSeguimiento camara;
 
+
     void Start()
     {
         player = Player.Instance.transform;
         camara = Camera.main.GetComponent<CamaraSeguimiento>();
+
     }
 
 
@@ -27,6 +29,10 @@ public class MovHabitaciones : MonoBehaviour
 
         }
     }
+
+   
+
+
 }
     /*
     //public Transform targetRoom;  // La habitación a la que lleva esta puerta
