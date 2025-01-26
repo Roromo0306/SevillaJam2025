@@ -7,6 +7,8 @@ public class DisparoPlayer : MonoBehaviour
     public GameObject bala;
     public Player player;
 
+    public UI ui;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,10 +18,15 @@ public class DisparoPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if(ui.clicked == true)
         {
-            Disparar();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Disparar();
+                player.animator.SetBool("isAttackingArea",true);
+            }
         }
+        
     }
 
     public void Disparar()

@@ -111,7 +111,25 @@ public class Player : MonoBehaviour
             }
         }
 
-         Vector3 scale = transform.localScale;
+        
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Attack();
+                animator.SetBool("isMelee", true);
+            }
+            if (isAttacking)
+            {
+                timer += Time.deltaTime;
+                if (timer >= timeToAttack)
+                {
+                    timer = 0f;
+                    isAttacking = false;
+                    AttackArea.SetActive(false);
+                }
+            }
+        
+
+        Vector3 scale = transform.localScale;
 
 
         if (CoordX < 0)
@@ -129,6 +147,7 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("isRunning", true);
             animator.SetBool("isAttackingArea", false);
+            animator.SetBool("isMelee", false);
             bubbles.Play();
         }
         else

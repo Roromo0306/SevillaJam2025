@@ -7,6 +7,7 @@ public class UI : MonoBehaviour
     float plusVelocidad = 1.2f;
     public int costeVelocidad = 1;
     int ContadorClicks = 0;
+    int ContadorClicksDisparo = 0;
 
     public int plusVida = 1;
     public int costeVida = 2;
@@ -16,6 +17,8 @@ public class UI : MonoBehaviour
 
     public bool clicked = false;
     public int costeRafaga = 3;
+
+    public int costeDisparo = 2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -122,6 +125,31 @@ public class UI : MonoBehaviour
                 Debug.Log("Has comprado la rafaga de pompas");
                 Debug.Log("Me quedan " + personaje.myCoins);
                 ContadorClicks++;
+                clicked = true;
+            }
+
+        }
+        else if (personaje.myCoins == 0)
+        {
+            Debug.Log("No hay mas monedas ooo");
+        }
+    }
+    public void UnlockDisparo()
+    {
+        if (personaje.myCoins > 0)
+        {
+            if (ContadorClicksDisparo == 1)
+            {
+                Debug.Log("Lo siento, has llegado al maximo");
+                return;
+            }
+
+            if (ContadorClicksDisparo >= 0)
+            {
+                personaje.myCoins -= costeDisparo;
+                Debug.Log("Has comprado el disparo de pompas");
+                Debug.Log("Me quedan " + personaje.myCoins);
+                ContadorClicksDisparo++;
                 clicked = true;
             }
 
