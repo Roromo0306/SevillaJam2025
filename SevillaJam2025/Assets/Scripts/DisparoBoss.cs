@@ -9,7 +9,7 @@ public class DisparoBoss : MonoBehaviour
 
     void Start()
     {
-        tiempRes = tiemEn;
+        tiempRes = temEn;
     }
 
     
@@ -19,7 +19,7 @@ public class DisparoBoss : MonoBehaviour
         if (tiempRes <= 0)
         {
             GenerarBalas();
-            tiempRes = tiemEn;
+            tiempRes = temEn;
         }
     }
 
