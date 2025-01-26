@@ -17,7 +17,7 @@ public class MovHabitaciones : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("PlayerVerdadero"))
         {
             Vector3 entrada = targetRoom.position + (targetRoom.forward * 1.5f);
             player.position = entrada;
