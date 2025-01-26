@@ -12,7 +12,7 @@ public class EnemigoDistancia : MonoBehaviour
     void Start()
     {
         enemigo = this.gameObject;
-        jugador = GameObject.Find("Player");
+        jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
     }
 
    

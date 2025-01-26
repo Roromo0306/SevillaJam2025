@@ -28,7 +28,7 @@ public class Balas : MonoBehaviour
     {
         Transform puntoDeSpawn = tirador.transform;
 
-        Quaternion rotEjeX = Quaternion.Euler(-87, 0, 0);
+        Quaternion rotEjeX = Quaternion.Euler(0, 0, 0);
 
         GameObject bala1 = Instantiate(B, puntoDeSpawn.position, rotEjeX);
     }

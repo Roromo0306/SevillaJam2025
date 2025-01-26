@@ -12,11 +12,11 @@ public class DisparoBala : MonoBehaviour
     private Vector3 direccion;
 
     private float tiempInicial = 0f;
-    private float tiempFinal = 200f;
+    private float tiempFinal = 3500f;
     void Start()
     {
         bala = this.gameObject;
-        jugador = GameObject.Find("Player");
+        jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
 
         direccion = (jugador.transform.position - transform.position).normalized;
     }
@@ -40,7 +40,7 @@ public class DisparoBala : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameObject jugadorC = collision.gameObject;
-        if (jugador.tag == "Player")
+        if (jugador.tag == "PlayerVerdadero")
         {
             ataque(jugador);
         }
