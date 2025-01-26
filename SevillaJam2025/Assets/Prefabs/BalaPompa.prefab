@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7281323795596635539}
   - component: {fileID: 7852859144031589792}
   - component: {fileID: 5729362070123214607}
+  - component: {fileID: -6744337371987629880}
   m_Layer: 0
   m_Name: BalaPompa
   m_TagString: Untagged
@@ -103,3 +104,25 @@ MonoBehaviour:
   velocidad: 10
   "da\xF1o": 2
   player: {fileID: 0}
+  direccion: 0
+--- !u!65 &-6744337371987629880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110130215384527588}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 11.139999, y: 10.799999, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0}

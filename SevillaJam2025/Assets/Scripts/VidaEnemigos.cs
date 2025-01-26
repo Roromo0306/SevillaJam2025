@@ -6,13 +6,17 @@ public class VidaEnemigos : MonoBehaviour
 
     public static float Vida_Normal = 5f, Vida_Tanque = 10f, Vida_Corre = 1f, Vida_Distancia = 3f, VidaBoss =20f;
 
-    public Player player;
+    //public Player player;
+    public GameObject player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("PlayerVerdadero").transform.GetChild(0).GetComponent<Player>();
-       
+        //player = GameObject.FindGameObjectWithTag("PlayerVerdadero").transform.GetChild(0).GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("PlayerVerdadero");
+        
+
+
     }
 
     // Update is called once per frame
