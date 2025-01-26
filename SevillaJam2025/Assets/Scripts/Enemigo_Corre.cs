@@ -5,7 +5,7 @@ public class Enemigo_Corre : MonoBehaviour
 {
     
     private float damage = 4f;
-    GameObject jugador, enemigo;
+    public GameObject jugador, enemigo;
     public GameObject moneda;
     private Transform posicionMoneda;
   

@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemigoDistancia : MonoBehaviour
 {
     
-    private GameObject jugador, enemigo;
+    public GameObject jugador, enemigo;
 
     //Mirar
     private float distM = 4;

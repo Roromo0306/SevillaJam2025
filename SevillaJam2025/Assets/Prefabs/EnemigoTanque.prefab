@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  jugador: {fileID: 8240000911292185274, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+  enemigo: {fileID: 744950834894833501}
 --- !u!114 &4136296172801748148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a071d9bcbf2df74da9178e2ea55b36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!95 &8270877153796672722
 Animator:
   serializedVersion: 7

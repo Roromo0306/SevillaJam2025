@@ -5,7 +5,7 @@ public class Enemigo_Tanque : MonoBehaviour
 {
     
     public float damage = 1f;
-    GameObject jugador, enemigo;
+    public GameObject jugador, enemigo;
 
     //Perseguir
     private float distM = 4;
