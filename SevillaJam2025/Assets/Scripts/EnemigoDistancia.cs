@@ -26,7 +26,7 @@ public class EnemigoDistancia : MonoBehaviour
         float dist = Vector3.Distance(jugador.transform.position, enemigo.transform.position);
         if (dist < distM)
         {
-            enemigo.transform.LookAt(jugador.transform.position);
+            //enemigo.transform.LookAt(jugador.transform.position);
         }
     }
 }

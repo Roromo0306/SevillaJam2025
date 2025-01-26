@@ -40,14 +40,14 @@ public class Enemigo_Normal : MonoBehaviour
            
             perseguir();
         }
-       //Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Normal);
+       Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Normal);
        //Debug.Log("La distancia es " + dist);
 
     }
 
     private void perseguir()
     {
-        enemigo.transform.LookAt(jugador.transform.position);
+        //enemigo.transform.LookAt(jugador.transform.position);
         transform.position = Vector3.MoveTowards(enemigo.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
     }
 

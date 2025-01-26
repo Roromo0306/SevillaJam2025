@@ -40,7 +40,7 @@ public class Enemigo_Corre : MonoBehaviour
 
     private void perseguir()
     {
-        enemigo.transform.LookAt(jugador.transform.position);
+        //enemigo.transform.LookAt(jugador.transform.position);
         transform.position = Vector3.MoveTowards(enemigo.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
 
     }

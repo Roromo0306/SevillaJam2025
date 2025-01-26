@@ -15,8 +15,8 @@ public class Enemigo_Tanque : MonoBehaviour
     {
         
         enemigo = this.gameObject;
-        jugador = GameObject.Find("Player");
-        
+        jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
+
     }
 
     
@@ -36,7 +36,7 @@ public class Enemigo_Tanque : MonoBehaviour
 
     private void perseguir()
     {
-        enemigo.transform.LookAt(jugador.transform.position);
+        //enemigo.transform.LookAt(jugador.transform.position);
         transform.position = Vector3.MoveTowards(enemigo.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
     }
 
@@ -44,7 +44,7 @@ public class Enemigo_Tanque : MonoBehaviour
     {
         GameObject jugadorC = collision.gameObject;
 
-        if (jugadorC.tag == "Player")
+        if (jugadorC.tag == "PlayerVerdadero")
         {
             ataque(jugador);
         }
