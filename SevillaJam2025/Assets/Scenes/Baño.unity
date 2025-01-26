@@ -1612,6 +1612,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747619692}
   m_Mesh: {fileID: -5495902117074765545, guid: 46629a8eabc964747aceea40001470ba, type: 3}
+--- !u!198 &766547947 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6367137656295264615, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+  m_PrefabInstance: {fileID: 6545901340215703418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &790477603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5266,7 +5271,7 @@ PrefabInstance:
     - target: {fileID: 1912698667117822094, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 61dc00164d74dd748965f160902ea6b7, type: 2}
+      objectReference: {fileID: 2100000, guid: 70e111e02c90379488c8b10d7bd9f184, type: 2}
     - target: {fileID: 2032843460531751225, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
       propertyPath: m_Constraints
       value: 116
@@ -5327,6 +5332,10 @@ PrefabInstance:
       propertyPath: AttackArea
       value: 
       objectReference: {fileID: 923991095}
+    - target: {fileID: 8930943204141200421, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+      propertyPath: bubblesAttack
+      value: 
+      objectReference: {fileID: 766547947}
     - target: {fileID: 8930943204141200421, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
       propertyPath: panelPregunta
       value: 

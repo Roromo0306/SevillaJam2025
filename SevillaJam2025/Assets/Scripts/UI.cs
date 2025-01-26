@@ -8,6 +8,9 @@ public class UI : MonoBehaviour
     public int costeVelocidad = 1;
     int ContadorClicks = 0;
     int ContadorClicksDisparo = 0;
+    int ContadorClicksmasAtaque = 0;
+    int ContadorClicksmasVida = 0;
+    int ContadorClicksmasVelocidad = 0;
 
     public int plusVida = 1;
     public int costeVida = 2;
@@ -35,19 +38,19 @@ public class UI : MonoBehaviour
     {     
         if(personaje.myCoins > 0)
         {
-            if (ContadorClicks == 2)
+            if (ContadorClicksmasVelocidad == 2)
             {
                 Debug.Log("Lo siento, has llegado al maximo");
                 return;
             }
 
-            if (ContadorClicks >= 0)
+            if (ContadorClicksmasVelocidad >= 0)
             {
                 personaje.velocidadMovimiento *= plusVelocidad;
                 Debug.Log("La velocidad ahora es " + personaje.velocidadMovimiento);
                 personaje.myCoins -= costeVelocidad;
                 Debug.Log("Me quedan " + personaje.myCoins);
-                ContadorClicks++;
+                ContadorClicksmasVelocidad++;
             }
             
         }
@@ -61,19 +64,19 @@ public class UI : MonoBehaviour
     {
         if (personaje.myCoins > 1)
         {
-            if (ContadorClicks == 2)
+            if (ContadorClicksmasVida == 2)
             {
                 Debug.Log("Lo siento, has llegado al maximo");
                 return;
             }
 
-            if (ContadorClicks >= 0)
+            if (ContadorClicksmasVida >= 0)
             {
                 personaje.vida += plusVida;
                 Debug.Log("La vida ahora es " + personaje.vida);
                 personaje.myCoins -= costeVida;
                 Debug.Log("Me quedan " + personaje.myCoins);
-                ContadorClicks++;
+                ContadorClicksmasVida++;
             }
 
         }
@@ -87,19 +90,19 @@ public class UI : MonoBehaviour
     {
         if (personaje.myCoins > 1)
         {
-            if (ContadorClicks == 2)
+            if (ContadorClicksmasAtaque == 2)
             {
                 Debug.Log("Lo siento, has llegado al maximo");
                 return;
             }
 
-            if (ContadorClicks >= 0)
+            if (ContadorClicksmasAtaque >= 0)
             {
                 personaje.dañoAtaque *= plusAtaque;
                 Debug.Log("El Ataque ahora es " + personaje.dañoAtaque);
                 personaje.myCoins -= costeAtaque;
                 Debug.Log("Me quedan " + personaje.myCoins);
-                ContadorClicks++;
+                ContadorClicksmasAtaque++;
             }
 
         }
