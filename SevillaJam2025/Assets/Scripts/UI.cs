@@ -129,6 +129,7 @@ public class UI : MonoBehaviour
             {
                 personaje.myCoins -= costeRafaga;
                 Debug.Log("Has comprado la rafaga de pompas");
+                personaje.imagenDisparoRafagas.SetActive(true);
                 Debug.Log("Me quedan " + personaje.myCoins);
                 personaje.monedasUI.text = personaje.myCoins.ToString();
                 ContadorClicks++;
@@ -155,6 +156,7 @@ public class UI : MonoBehaviour
             {
                 personaje.myCoins -= costeDisparo;
                 personaje.monedasUI.text = personaje.myCoins.ToString();
+                personaje.imagenDisparo.SetActive(true);
                 Debug.Log("Has comprado el disparo de pompas");
                 Debug.Log("Me quedan " + personaje.myCoins);
                 

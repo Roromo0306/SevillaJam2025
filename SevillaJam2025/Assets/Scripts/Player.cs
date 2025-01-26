@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     public GameObject panelTiendaObjetos;
     public GameObject panelPregunta;
     public GameObject panelMuerte;
+    public GameObject imagenDisparoRafagas;
+    public GameObject imagenDisparo;
 
     public float vida = 6f;
 
@@ -62,6 +64,8 @@ public class Player : MonoBehaviour
         jugador = this.gameObject;
         animator = GetComponent<Animator>();
        panelMuerte.SetActive(false);
+        imagenDisparo.SetActive(false);
+        imagenDisparoRafagas.SetActive(false);
         bubblesAttack.Stop();
     }
 
