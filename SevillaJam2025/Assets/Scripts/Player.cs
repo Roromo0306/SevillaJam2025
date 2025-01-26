@@ -43,6 +43,7 @@ public class Player : MonoBehaviour
     public Animator animator;
 
     public ParticleSystem bubbles;
+    public ParticleSystem bubblesAttack;
 
     public static Player Instance;
 
@@ -58,7 +59,8 @@ public class Player : MonoBehaviour
         AttackArea.SetActive(false);
         jugador = this.gameObject;
         animator = GetComponent<Animator>();
-        //bubbles.Stop();
+       
+        bubblesAttack.Stop();
     }
 
     // Update is called once per frame
@@ -98,6 +100,7 @@ public class Player : MonoBehaviour
             {
                 Attack();
                 animator.SetBool("isAttackingArea",true);
+                bubblesAttack.Play();
             }
             if (isAttacking)
             {
@@ -107,6 +110,7 @@ public class Player : MonoBehaviour
                     timer = 0f;
                     isAttacking = false;
                     AttackArea.SetActive(false);
+                    
                 }
             }
         }
@@ -148,13 +152,15 @@ public class Player : MonoBehaviour
             animator.SetBool("isRunning", true);
             animator.SetBool("isAttackingArea", false);
             animator.SetBool("isMelee", false);
+            bubblesAttack.Stop();
             bubbles.Play();
+            
         }
         else
         {
             animator.SetBool("isRunning", false);
-           
-            bubbles.Play();
+            bubbles.Stop();
+            
         }
 
     }
