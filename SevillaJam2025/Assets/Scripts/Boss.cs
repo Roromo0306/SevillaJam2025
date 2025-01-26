@@ -1,126 +1,108 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-
     private float damage = 3.5f;
-    private GameObject jugador, enemigo;
+    private GameObject jugador;
 
-    //Perseguir
+    // Perseguir
     private float distM = 20f;
     private float velocidad = 1f;
     private float desaceleracion = 0.1f;
     private Rigidbody rb;
 
-    private Vector3 dirc;
-    private bool perse = true;
-    private bool salt = false;
+    private bool persiguiendo = true;
 
-    private float tiemEn = 3f;
-    private float tiempRes = 30f;
-    private float tiemEn2 = 2f;
-    private float tiempRes2;
-
-    private int tiempoEspera=5;
+    private float tiempoPersecucion = 3f;
+    private float tiempoEsperaSalto = 2f;
+    private float tiempoEnElAire = 0.5f;
 
     void Start()
     {
-        enemigo = this.gameObject;
-        jugador = GameObject.Find("Player");
-        tiempRes = tiemEn;
-        
+        jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
+        StartCoroutine(PersiguiendoCoroutine());
     }
-
 
     void Update()
     {
+        // Destruir enemigo si la vida es cero o menor
         if (VidaEnemigos.Vida_Normal <= 0)
         {
-            Destroy(enemigo);
+            Destroy(gameObject);
         }
 
-        tiempRes =  tiempRes - 5* Time.deltaTime;
-        if ( tiempRes <= 0)
+        if (persiguiendo)
         {
-            perse = false;
-            StartCoroutine(Para());
-            
-
-            if (velocidad < 0)
+            float dist = Vector3.Distance(jugador.transform.position, transform.position);
+            if (dist < distM)
             {
-                Debug.Log("Velocidad 0");
-                velocidad = 0;
-                salt = true;
-            }
-
-
-            tiempRes = tiemEn;
-            
-        }
-
-        float dist = Vector3.Distance(jugador.transform.position, enemigo.transform.position);
-        if (dist < distM)
-        {
-            if (perse == true) 
-            { 
-            perseguir();
+                Perseguir();
             }
         }
-        // Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Normal);
-        dirc = enemigo.transform.position;
-        if(salt == true)
+    }
+
+    private void Perseguir()
+    {
+        transform.LookAt(jugador.transform.position);
+        transform.position = Vector3.MoveTowards(transform.position, jugador.transform.position, velocidad * Time.deltaTime);
+    }
+
+    private IEnumerator PersiguiendoCoroutine()
+    {
+        // Persigue al jugador durante el tiempo especificado
+        yield return new WaitForSeconds(tiempoPersecucion);
+
+        // Parar y saltar
+        yield return StartCoroutine(Saltar());
+
+        // Continuar persiguiendo
+        persiguiendo = true;
+        StartCoroutine(PersiguiendoCoroutine());
+    }
+
+    private IEnumerator Saltar()
+    {
+        // Detenerse y preparar el salto
+        persiguiendo = false;
+        velocidad = 0f;
+
+        // Saltar
+        Vector3 saltoPos = transform.position;
+        saltoPos.y += 2; // Altura del salto
+        float tiempoTranscurrido = 0f;
+
+        while (tiempoTranscurrido < tiempoEnElAire)
         {
-            saltar();
-            salt = false;
+            transform.position = Vector3.Lerp(transform.position, saltoPos, tiempoTranscurrido / tiempoEnElAire);
+            tiempoTranscurrido += Time.deltaTime;
+            yield return null; // Espera un frame
         }
-        
 
-    }
+        // Regresar al suelo
+        saltoPos.y -= 2; // Volver a la altura original
+        tiempoTranscurrido = 0f;
 
-    private void saltar()
-    {
-        Debug.Log("La posición en el eje y" + dirc.y);
-        dirc.y += 2;
-        enemigo.transform.position = dirc;
-
-    }
-
-    public IEnumerator Para()
-    {
-        if (velocidad > 0)
+        while (tiempoTranscurrido < tiempoEnElAire)
         {
-            Debug.Log("Desacelerando");
-            while (velocidad >= 0)
-            {
-                velocidad -= desaceleracion * Time.deltaTime;
-                Debug.Log("La velocidad es " + velocidad);
-            }
-
+            transform.position = Vector3.Lerp(transform.position, saltoPos, tiempoTranscurrido / tiempoEnElAire);
+            tiempoTranscurrido += Time.deltaTime;
+            yield return null; // Espera un frame
         }
-        Debug.Log("gogo");
-        yield return new WaitForSeconds(tiempoEspera);
-    }
 
-    private void perseguir()
-    {
-        enemigo.transform.LookAt(jugador.transform.position);
-        transform.position = Vector3.MoveTowards(enemigo.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
+        // Esperar en el suelo
+        yield return new WaitForSeconds(tiempoEsperaSalto);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject jugadorC = collision.gameObject;
-
-        if (jugadorC.tag == "Player")
+        if (collision.gameObject.CompareTag("PlayerVerdadero"))
         {
-            ataque(jugador);
+            Ataque(collision.gameObject);
         }
     }
 
-    void ataque(GameObject jugador)
+    void Ataque(GameObject jugador)
     {
         Player Jscript = jugador.GetComponent<Player>();
         if (Jscript != null)
