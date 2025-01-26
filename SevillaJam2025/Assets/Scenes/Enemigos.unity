@@ -737,6 +737,7 @@ MonoBehaviour:
   costeAtaque: 2
   clicked: 0
   costeRafaga: 3
+  costeDisparo: 2
 --- !u!4 &438221112
 Transform:
   m_ObjectHideFlags: 0

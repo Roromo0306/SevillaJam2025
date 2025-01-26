@@ -5,6 +5,7 @@ public class DisparoBala : MonoBehaviour
 {
     private float damage = 2f;
     private GameObject jugador, bala;
+   
 
     //Perseguir
     private float velocidad = 3f;
@@ -13,10 +14,16 @@ public class DisparoBala : MonoBehaviour
 
     private float tiempInicial = 0f;
     private float tiempFinal = 3500f;
+
+  
+
     void Start()
     {
         bala = this.gameObject;
         jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
+        
+        
+        
 
         direccion = (jugador.transform.position - transform.position).normalized;
     }
@@ -25,6 +32,7 @@ public class DisparoBala : MonoBehaviour
     void Update()
     {
         transform.position += direccion * velocidad * Time.deltaTime;
+        
         temporizador();
         Debug.Log("El tiempo inicial es " + tiempInicial);
     }

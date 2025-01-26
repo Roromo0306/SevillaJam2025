@@ -8,6 +8,7 @@ public class Enemigo_Corre : MonoBehaviour
     GameObject jugador, enemigo;
     public GameObject moneda;
     private Transform posicionMoneda;
+  
 
     //Perseguir
     private float distM = 5f;
@@ -17,11 +18,14 @@ public class Enemigo_Corre : MonoBehaviour
     {
         enemigo = this.gameObject;
         jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
+        
+   
     }
 
     
     void Update()
     {
+        
         if (VidaEnemigos.Vida_Corre <= 0)
         {
             Destroy(enemigo);
