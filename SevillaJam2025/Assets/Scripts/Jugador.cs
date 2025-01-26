@@ -65,21 +65,13 @@ public class Jugador : MonoBehaviour
     public void atacar(GameObject enemigo)
     {
        
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            VidaEnemigos.Vida_Normal = VidaEnemigos.Vida_Normal - 1;
-           
-
-        }
+       
     }
 
     public void atacarT(GameObject enemigo)
     {
         
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            VidaEnemigos.Vida_Tanque = VidaEnemigos.Vida_Tanque - 1;
-        }
+       
     }
 
     public void atacarC(GameObject enemigo)
@@ -87,7 +79,11 @@ public class Jugador : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.E))
         {
-            VidaEnemigos.Vida_Corre = VidaEnemigos.Vida_Corre - 1;
+            var viaEnmigo = enemigo.GetComponent<VidaEnemigos>();
+            if (viaEnmigo != null)
+            {
+                viaEnmigo.Vida_Corre = viaEnmigo.Vida_Corre - 1;
+            }
         }
     }
 

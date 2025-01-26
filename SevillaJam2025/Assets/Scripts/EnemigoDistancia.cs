@@ -22,10 +22,7 @@ public class EnemigoDistancia : MonoBehaviour
         {
             return;
         }
-        if (VidaEnemigos.Vida_Distancia <= 0)
-        {
-            Destroy(enemigo);
-        }
+        
 
         float dist = Vector3.Distance(jugador.transform.position, enemigo.transform.position);
         if (dist < distM)
