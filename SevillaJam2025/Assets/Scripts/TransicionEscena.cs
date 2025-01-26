@@ -27,7 +27,7 @@ public class TransicionEscena : MonoBehaviour
         animator.SetTrigger("Iniciar");
         yield return new WaitForSeconds(animacionFinal.length);
 
-        SceneManager.LoadScene("Juego");
+        SceneManager.LoadScene("Baño");
 
     }
 
