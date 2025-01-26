@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e2d86fee2026845a6717f94dbf64bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jugador: {fileID: 8240000911292185274, guid: 04491151284d5ea44aa23533c13192fb, type: 3}
+  enemigo: {fileID: 4302294805597553618}
   moneda: {fileID: 1227861994141131393, guid: e1318c90df144954189138a7a3d1807c, type: 3}
 --- !u!114 &6829489431515661888
 MonoBehaviour:
@@ -165,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a071d9bcbf2df74da9178e2ea55b36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!95 &6155843720797373355
 Animator:
   serializedVersion: 7

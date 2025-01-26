@@ -5,7 +5,8 @@ public class Enemigo_Normal : MonoBehaviour
 {
     
     private float damage = 2f;
-    GameObject jugador, enemigo;
+    public GameObject jugador, enemigo;
+    Transform player;
 
     //Perseguir
     private float distM = 4;
@@ -18,7 +19,7 @@ public class Enemigo_Normal : MonoBehaviour
         enemigo = this.gameObject;
         
         jugador = GameObject.FindGameObjectWithTag("PlayerVerdadero");
-
+        player = Player.Instance.transform;
 
     }
 
