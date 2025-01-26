@@ -265,8 +265,15 @@ public class Player : MonoBehaviour
         if (vida <= 0)
         {
             Debug.Log("El jugador ha muerto");
-            Destroy(this.gameObject);
+            StartCoroutine(MuerteYCambioDeEscena("Baño"));
         }
+    }
+
+    private IEnumerator MuerteYCambioDeEscena(string nombreEscena)
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(this.gameObject);
+        SceneManager.LoadScene("Baño");
     }
 
     public void OnCambioEscena(string sceneName)
