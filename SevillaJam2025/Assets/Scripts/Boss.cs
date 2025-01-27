@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     private float damage = 3f;
-    private GameObject jugador;
+    public GameObject jugador;
 
     // Perseguir
     private float distM = 20f;
@@ -29,10 +29,7 @@ public class Boss : MonoBehaviour
     void Update()
     {
         // Destruir enemigo si la vida es cero o menor
-        if (VidaEnemigos.Vida_Normal <= 0)
-        {
-            Destroy(gameObject);
-        }
+       
 
         if (persiguiendo)
         {

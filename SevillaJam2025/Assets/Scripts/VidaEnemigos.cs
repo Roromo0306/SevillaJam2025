@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class VidaEnemigos : MonoBehaviour
 {
 
-    public static float Vida_Normal = 5f, Vida_Tanque = 10f, Vida_Corre = 1f, Vida_Distancia = 3f, VidaBoss =20f;
+    public float Vida_Normal = 5f, Vida_Tanque = 10f, Vida_Corre = 1f, Vida_Distancia = 3f, VidaBoss =20f;
 
     //public Player player;
     public GameObject player;

@@ -29,10 +29,7 @@ public class Enemigo_Corre : MonoBehaviour
         {
             return;
         }
-        if (VidaEnemigos.Vida_Corre <= 0)
-        {
-            Destroy(enemigo);
-        }
+        
 
         float dist = Vector3.Distance(jugador.transform.position, enemigo.transform.position);
         if(dist < distM)

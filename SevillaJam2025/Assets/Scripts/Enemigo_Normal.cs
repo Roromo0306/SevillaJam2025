@@ -12,7 +12,6 @@ public class Enemigo_Normal : MonoBehaviour
     private float distM = 4;
     private float velocidad = 3f;
     private Rigidbody rb;
-    public GameObject moneda;
     private Transform posicionMoneda;
     void Start()
     {
@@ -30,11 +29,7 @@ public class Enemigo_Normal : MonoBehaviour
             return;
         }
       
-        if (VidaEnemigos.Vida_Normal <= 0)
-        {
-            Destroy(enemigo);
-            Instantiate(moneda, posicionMoneda.position, Quaternion.identity);
-        }
+       
 
         float dist = Vector3.Distance(jugador.transform.position, enemigo.transform.position);
         
@@ -43,7 +38,7 @@ public class Enemigo_Normal : MonoBehaviour
            
             perseguir();
         }
-       Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Normal);
+       //Debug.Log("La vida del enemigo es " + VidaEnemigos.Vida_Normal);
        //Debug.Log("La distancia es " + dist);
 
     }

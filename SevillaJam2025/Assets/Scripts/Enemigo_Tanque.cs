@@ -26,10 +26,7 @@ public class Enemigo_Tanque : MonoBehaviour
         {
             return;
         }
-        if (VidaEnemigos.Vida_Tanque <= 0)
-        {
-            Destroy(enemigo);
-        }
+        
         float dist = Vector3.Distance(jugador.transform.position, enemigo.transform.position);
         if (dist < distM)
         {
