@@ -7,7 +7,7 @@ public class Jugador : MonoBehaviour
     private Rigidbody rb;
     private float cordX, cordY, cordZ, d;
     private Vector3 pos;
-
+    private int x;
 
     //Daño y atacar
     private GameObject jugador, enemigoN, enemigoT, enemigoC;
@@ -34,6 +34,7 @@ public class Jugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    
         cordY = rb.linearVelocity.y;
         cordX = Input.GetAxis("Horizontal") * vel;
         cordZ = Input.GetAxis("Vertical") * vel;
